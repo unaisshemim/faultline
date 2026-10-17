@@ -4,6 +4,7 @@ import { z } from 'zod'
 import { WorkService, WorkError } from './work.js'
 import { seedSnapshot } from './seed.js'
 import { chatHandler } from './chat.js'
+import { createIncidentRoutes } from './incident/routes.js'
 import { integrationRoutes } from './integrations.js'
 import type { SystemStatus } from '../../../shared/contracts.js'
 
@@ -21,6 +22,7 @@ export function createApp(work: WorkService, config = { key: process.env.OPENAI_
     await next()
   })
   const status = (database: boolean): SystemStatus => ({ database, openai: Boolean(config.key), model: config.model, timezone: config.timezone, followUpIntervalMs: work.followUpIntervalMs, preview: !database })
+  app.route('/api/incident', createIncidentRoutes(undefined, config).app)
   app.route('/api/integrations', integrationRoutes())
   app.get('/api/health', async c => {
     try { await work.store.read(); return c.json(status(true)) } catch { return c.json(status(false)) }

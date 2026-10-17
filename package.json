@@ -19,7 +19,8 @@
     "lint": "moon run web:lint",
     "test:graph": "moon run api:test-graph",
     "check": "moon run workspace:check",
-    "moon": "moon"
+    "moon": "moon",
+    "test:incident": "moon run api:test-incident"
   },
   "devDependencies": {
     "@moonrepo/cli": "2.6.1",

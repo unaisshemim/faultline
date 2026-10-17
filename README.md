@@ -1,4 +1,67 @@
-# Company Brain for Itron
+# Faultline — five alerts, one underlying failure
+
+Track 01 sandbox feature on `feature/incident-investigator`.
+
+Open **http://localhost:5173/#/incident**. The page contains the dependency graph, investigation/evidence panel, one approved action, and the before/after checkout check.
+
+## Run the incident demo
+
+```sh
+npm ci
+npm run db:up
+npm run dev
+```
+
+FalkorDB runs at `127.0.0.1:16379`. Optional OpenAI settings are documented in `.env.example`; without a key, the deterministic investigator uses the same MCP graph tools. The UI identifies which engine actually completed the investigation, including provider fallbacks.
+
+1. Keep **Product-data configuration** selected and click **Trigger incident**. Checkout executes real local endpoint handlers; aborted requests produce five generated alerts and persisted trace spans. The recent payments release is a generated decoy event.
+2. Click **Investigate incident**. With an OpenAI key, the model discovers the MCP tools and selects reads. The evidence check requires a failing leaf dependency, direct timeout spans, and a preceding configuration change. Native FalkorDB path traversal and branch aggregation reveal checkout → pricing → product-data and checkout → inventory → product-data. Successful payments spans rule out the deployment as the cause.
+3. Inspect **Graph queries** for the actual Cypher, parameters, row counts, and query duration. Click nodes or alerts to filter the evidence; expand **Raw record** for full span IDs, trace parents, timestamps, errors, and configuration revisions.
+4. Click **Revert configuration in sandbox**. This click approves one incident-bound, revision-checked action. The server restores the selected service's previous configuration and immediately executes the identical checkout request again. Recovery appears only after the request succeeds.
+5. Change the fault selector to **Payments configuration**, click **Restart incident**, and investigate again. The graph edges stay identical; pricing, inventory, and product-data succeed, while payment spans time out. The diagnosis and approved action move to payments. Approve and verify recovery again.
+
+## Executable simulation boundaries
+
+This is explicitly a **simulated local environment**. Five endpoints live inside one Hono app:
+
+- `GET /api/incident/services/checkout`
+- `GET /api/incident/services/pricing`
+- `GET /api/incident/services/inventory`
+- `GET /api/incident/services/payments`
+- `GET /api/incident/services/product-data`
+
+Internal Hono requests execute the dependency handlers with real timers and AbortSignals. The injected configuration increases latency from 8 ms to 220 ms, beyond the calling service's timeout. Logs come from those executions; graph health comes from the latest checkout trace. These are in-process service simulations, not independent deployed services or real payment operations.
+
+Incident spans and change events are stored as separate nodes and relationships in the `company_brain_incidents` FalkorDB graph. The five service nodes and dependency edges stay fixed. Live runtime configuration and approval tokens are process-local; restart a fresh incident after restarting the API. No production systems are contacted or rolled back.
+
+## MCP and action boundary
+
+`POST /api/incident/mcp` exposes a stateless JSON-RPC MCP endpoint using protocol `2025-03-26`. The investigator discovers the catalog with `tools/list` and invokes the same `tools/call` request contract that an external client can use. Supported read-only tools:
+
+- `trace_dependencies`: native multi-hop Cypher traversal.
+- `read_trace_evidence`: actual incident spans persisted in FalkorDB.
+- `read_recent_changes`: generated configuration/deployment event records.
+- `find_convergence`: Cypher traversal plus distinct-branch aggregation.
+
+The model does not receive the injected scenario choice. It submits a proposed cause that must agree with the evidence check; insufficient evidence produces no approval. The deterministic fallback computes from those same graph/log records and is labeled in the UI. Rollback is outside the read-only MCP catalog and requires the explicit UI approval token. Arbitrary Cypher, shell commands, and client-supplied rollback targets are not accepted.
+
+Protocol references: [MCP Streamable HTTP](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports) and [MCP tools](https://modelcontextprotocol.io/specification/2025-03-26/server/tools).
+
+## Verify
+
+```sh
+npm run check
+npm run build
+npm run test:incident
+```
+
+The normal suite tests real endpoint failure/recovery, both fault locations on the same topology, stale approvals, duplicate actions, concurrent operation guards, MCP argument validation, and refusal to act on a deployment correlation alone. `test:incident` repeats both scenarios against real FalkorDB, asserts the native graph query results, checks HTTP 503 → 200 using the same request, and removes only its own temporary graph. It requires the local database.
+
+The previous Company Brain app remains available at `/#/`; its existing workspace documentation follows. The incident feature does not require Teams, Outlook, cloud deployment, or elaborate memory.
+
+---
+
+## Company Brain for Itron
 
 A local demo workspace for Itron to coordinate Itron operations, finance, customer support, and technology through an OpenAI conversation. Vite + React + TypeScript, shadcn/ui, Hono, Vercel AI SDK, FalkorDB, and moon for task orchestration.
 

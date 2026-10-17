@@ -20,15 +20,16 @@ import { FounderChat } from '@/components/FounderChat'
 import { DemoTeamsPanel } from '@/components/DemoTeamsPanel'
 import { TaskDetail } from '@/components/TaskDetail'
 import { Integrations } from '@/components/Integrations'
+import { IncidentLab } from '@/components/IncidentLab'
 import { LiveTestChat } from '@/components/LiveTestChat'
 import { TeamsChats } from '@/components/TeamsChats'
-import { Plug, Mic } from 'lucide-react'
+import { Plug, Mic, Workflow } from 'lucide-react'
 
 type Page = 'home' | 'tasks' | 'team' | 'activity'
 function IconButton({ label, children, onClick, className }: { label: string; children: React.ReactNode; onClick: () => void; className?: string }) {
   return <Tooltip><TooltipTrigger asChild><Button variant="ghost" size="icon" aria-label={label} onClick={onClick} className={className}>{children}</Button></TooltipTrigger><TooltipContent>{label}</TooltipContent></Tooltip>
 }
-export default function App() { return <Admin dataProvider={dataProvider} dashboard={Workspace}><Resource name="tasks" options={{ label: 'Tasks' }} icon={ListTodo} list={Workspace} /><Resource name="team" options={{ label: 'Team' }} icon={UsersRound} list={Workspace} /><Resource name="updates" options={{ label: 'Updates' }} icon={Clock3} list={Workspace} /><Resource name="chats" options={{ label: 'Chats' }} icon={MessageSquare} list={TeamsChats} /><Resource name="live-test" options={{ label: 'Live test' }} icon={Mic} list={LiveTestChat} /><Resource name="integrations" options={{ label: 'Integrations' }} icon={Plug} list={Integrations} /></Admin> }
+export default function App() { return <Admin dataProvider={dataProvider} dashboard={Workspace}><Resource name="tasks" options={{ label: 'Tasks' }} icon={ListTodo} list={Workspace} /><Resource name="team" options={{ label: 'Team' }} icon={UsersRound} list={Workspace} /><Resource name="updates" options={{ label: 'Updates' }} icon={Clock3} list={Workspace} /><Resource name="chats" options={{ label: 'Chats' }} icon={MessageSquare} list={TeamsChats} /><Resource name="incident" options={{ label: 'Incident lab' }} icon={Workflow} list={IncidentLab} /><Resource name="live-test" options={{ label: 'Live test' }} icon={Mic} list={LiveTestChat} /><Resource name="integrations" options={{ label: 'Integrations' }} icon={Plug} list={Integrations} /></Admin> }
 function Workspace() {
   const location = useLocation()
   const routeNavigate = useNavigate()

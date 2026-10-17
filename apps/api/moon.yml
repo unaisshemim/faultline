@@ -30,3 +30,10 @@ tasks:
     options:
       cache: false
       runInCI: false
+
+  test-incident:
+    command: npm exec -- vitest run src/incident/incident.integration.test.ts
+    env:
+      RUN_GRAPH_TESTS: '1'
+    options:
+      cache: false
