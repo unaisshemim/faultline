@@ -1,0 +1,108 @@
+# Company Brain for Itron
+
+A local demo workspace for Itron to coordinate Itron operations, finance, customer support, and technology through an OpenAI conversation. Vite + React + TypeScript, shadcn/ui, Hono, Vercel AI SDK, FalkorDB, and moon for task orchestration.
+
+## Run
+
+Requires Node.js 22.12+ and Docker Desktop running.
+
+The repository pins moon 2.6.1 locally. Root npm scripts invoke moon, which runs
+the web and API tasks from their respective folders using your installed Node
+and npm. No global moon or proto setup is required.
+
+```sh
+npm install
+cp .env.example .env
+```
+
+Set `OPENAI_API_KEY` in the root `.env`. The default tool-capable model is `gpt-4.1-mini`; change `OPENAI_MODEL` if needed. Keep the key out of frontend code. Restart the backend after changing environment values.
+
+```sh
+npm run db:up
+npm run dev
+```
+
+Open http://localhost:5173. The API listens on 127.0.0.1:3101; FalkorDB on 127.0.0.1:16379. These ports avoid existing local services. `npm run db:down` stops the database without deleting the persistent volume.
+
+For direct moon commands, use the local CLI:
+
+```sh
+npx --no-install moon run api:dev web:dev
+npx --no-install moon run web:dev
+npx --no-install moon run api:dev
+npx --no-install moon projects
+npx --no-install moon tasks
+```
+
+`npm run dev:web` and `npm run dev:api` also run the corresponding moon tasks.
+Stop an existing development process before starting another one on these ports.
+Backend secrets remain in the root `.env`, which the API loads itself; moon does
+not inject them into the frontend. Restart `api:dev` after changing `.env`.
+
+## Home and Tasks
+
+Home is the conversation workspace, with a focused composer and rotating Itron examples. Tasks contains KPI cards, the task list, and employee/system update history. Saved conversations are accessed through the history icon at the top right of Home. The chat uses the official AI Elements attachment component for local previews and saved-message attachments. You can attach up to three PNG, JPEG, WebP, or PDF files totaling 2 MB, with a text question. Files are sent to the configured AI provider when you send the message and saved in local chat history.
+
+## Try it
+
+1. Ask: “Prepare the Itron installation readiness report by Friday. Include meter delivery, gateway availability, and installer access; estimate four hours.” The assistant uses current company data and assigns Leena; Arjun has only two hours free. Missing scope, date or effort triggers conversational clarification. Review the AI Elements confirmation card, then approve to save the task or reject to leave it uncreated.
+2. Open the saved task, then **Employee simulator**. Accept as the assigned employee.
+3. Report a blocker, such as “Waiting for gateway commissioning before the Itron handover.” See the confirmed update in task details and the founder dashboard.
+4. Leave the task open for two minutes to see a simulated automatic check-in. The scheduler checks every 30 seconds.
+5. Ask the founder assistant about blockers or remaining capacity.
+6. Complete the task in the simulator. Follow-ups stop and capacity is released.
+7. Restart the API. Tasks, updates and founder conversations remain in FalkorDB.
+
+The UI uses real OpenAI only. Without a key, connection guidance is displayed. If the database is unavailable, the dashboard shows an explicitly read-only sample preview. A configured key is not proof of model access; provider errors appear in chat.
+
+## Itron demo scenarios
+
+- R&D: route meter calibration and bench validation to Kavya; firmware prototypes and offline-buffer tests to Rohan. Tech handles the deployed platform and telemetry.
+
+- Operations: prepare installation readiness covering meter delivery, gateway availability, and installer access. In a fresh demo, Leena takes a four-hour installation task because Arjun has only two hours free.
+- Finance: ask what is blocking Itron water-billing reconciliation; inspect the missing handover readings before creating follow-up work.
+- Tech Team: find an owner for a four-hour gateway telemetry investigation; Dev handles IoT and platform work. Track recovery and verify leak-alert notifications.
+- Support Team: ask Leena to prepare a resident onboarding guide for the demo community with an agreed scope, deadline, and effort.
+
+Existing demo completions, cancellations, custom tasks, and replies are preserved when original sample records are tailored. Prior chat history remains saved; the Itron conversation uses its own thread.
+
+## MVP boundaries
+
+One Itron demo workspace and six illustrative employees across R&D, Support Team, Tech Team, Finance, and Operations. Task assignments and employee replies in the employee simulator remain simulated. Separately, the Chats page reads real Teams conversations and sends messages as the connected account only when you choose Send. Add delegated `Chat.Read` and `ChatMessage.Send` in Microsoft Entra and reconnect Teams to approve chat access. The page loads conversations and older messages with pagination and refreshes tokens on demand. Automatic messaging and background sync remain deferred. Outlook does not send email. Responsibilities match a declared list, and weekly capacity subtracts estimated effort for open tasks. Calendar availability, leave, working hours, app authentication, multiple companies, production deployment and escalation policies are deferred.
+
+Microsoft connection setup: [configuration and permissions](docs/implementation/microsoft-integrations.md).
+
+The API is an unauthenticated **local demonstration** bound to localhost. Keep it local. Use fake sample company data.
+
+FalkorDB is the only store. For this small demo, one canonical company snapshot is stored alongside entity nodes and ownership/update/message relationships in the same graph query. The API serializes writes in one process. This deliberately simple approach avoids a second database or synchronization worker; it is not a multi-process architecture.
+
+Chat task creation requires approval of a stored proposal. Approval and rejection are persisted; retries cannot create duplicates. Task creation is idempotent per user message. Retries recover already saved work. Server history and tool execution are authoritative; client-supplied tool outputs are ignored. Confirmed employee updates remain distinct from system updates.
+
+## Verify
+
+```sh
+npm run check
+npm test
+npm run test:graph
+npm run typecheck
+npm run build
+npm run lint
+```
+
+`npm run check` runs API and web typechecks, API and web tests, and web lint in
+moon's task graph. `npm run build` builds both apps, with `dist` outputs declared
+for moon caching. Runtime state lives in `.moon/cache/`. `npm run test:graph`
+remains an explicit live-database check.
+All root scripts use moon; app-level npm scripts are the underlying commands.
+
+The regular suite covers assignment, capacity, task ownership/actions, idempotence, reminders, API validation and streamed AI tool execution/recovery. AI provider mocks exist only in tests. The graph suite uses a disposable graph and verifies real persistence across fresh connections. UI primitives retain standard shadcn source exports; lint may report Fast Refresh/style guidance warnings.
+
+Demo context uses [Itron’s public water-metering overview](https://apac.itron.com/what-we-offer/metering-solutions/water) as a reference. This is an independent illustrative demo, with no affiliation or endorsement implied. Staff, tasks, communities, and updates are synthetic; they do not represent actual operational records. Company Brain coordinates work and does not control meters, approve bills or payments, or deploy software. Live OpenAI and Microsoft behavior requires separate provider verification.
+
+## Live test chat
+
+Open **Live test** in the sidebar, or visit `http://localhost:5173/#/live-test`. This separate Teams-inspired page uses the existing AI chat, saved conversations, attachments, and task approvals.
+
+Type a message and press Enter, or tap the microphone to dictate. Tap it again to finish, review the draft, then send. Voice input uses the browser's speech recognition service (Chrome recommended) and requires microphone permission; it is not a continuous realtime audio session. The speaker button enables browser-generated spoken replies. Typed chat remains available when speech recognition is unsupported.
+
+FalkorDB and an OpenAI key must be configured for live AI replies. The page shows missing connections and links to settings. Seeded work and staff remain illustrative.

@@ -1,0 +1,25 @@
+$schema: https://moonrepo.dev/schemas/project.json
+
+toolchains:
+  default: system
+
+tasks:
+  db-up:
+    command: docker compose -f infra/compose.yaml up -d
+    options:
+      cache: false
+      runInCI: false
+  db-down:
+    command: docker compose -f infra/compose.yaml down
+    options:
+      cache: false
+      runInCI: false
+  check:
+    deps:
+      - api:typecheck
+      - web:typecheck
+      - api:test
+      - web:test
+      - web:lint
+    options:
+      cache: false

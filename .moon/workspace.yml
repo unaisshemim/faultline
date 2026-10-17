@@ -1,0 +1,12 @@
+$schema: https://moonrepo.dev/schemas/workspace.json
+
+projects:
+  workspace: .
+  api: apps/api
+  web: apps/web
+
+versionConstraint: '2.6.1'
+
+pipeline:
+  syncProjects: false
+  syncWorkspace: false

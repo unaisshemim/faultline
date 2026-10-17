@@ -1,0 +1,31 @@
+{
+  "name": "company-brain",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev": "moon run api:dev web:dev",
+    "dev:web": "moon run web:dev",
+    "dev:api": "moon run api:dev",
+    "db:up": "moon run workspace:db-up",
+    "db:down": "moon run workspace:db-down",
+    "typecheck": "moon run api:typecheck web:typecheck",
+    "build": "moon run api:build web:build",
+    "test": "moon run api:test web:test",
+    "lint": "moon run web:lint",
+    "test:graph": "moon run api:test-graph",
+    "check": "moon run workspace:check",
+    "moon": "moon"
+  },
+  "devDependencies": {
+    "@moonrepo/cli": "2.6.1",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  }
+}

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.local
+test-results/
+playwright-report/
+data/
+.DS_Store
+
+.playwright-cli/
+output/
+.moon/cache/
+.moon/docker/

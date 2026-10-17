@@ -1,0 +1,33 @@
+$schema: https://moonrepo.dev/schemas/project.json
+
+toolchains:
+  default: system
+
+tasks:
+  dev:
+    command: npm run dev
+    preset: server
+  build:
+    command: npm run build
+    inputs:
+      - src/**/*
+      - public/**/*
+      - index.html
+      - '*config*'
+      - package.json
+      - /shared/**/*
+      - /package-lock.json
+    outputs:
+      - dist
+  typecheck:
+    command: npm run typecheck
+    options:
+      cache: false
+  test:
+    command: npm exec -- vitest run src/lib
+    options:
+      cache: false
+  lint:
+    command: npm run lint
+    options:
+      cache: false

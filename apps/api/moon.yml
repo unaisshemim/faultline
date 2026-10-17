@@ -1,0 +1,32 @@
+$schema: https://moonrepo.dev/schemas/project.json
+
+toolchains:
+  default: system
+
+tasks:
+  dev:
+    command: npm run dev
+    preset: server
+  build:
+    command: npm run build
+    inputs:
+      - src/**/*
+      - tsconfig.json
+      - package.json
+      - /shared/**/*
+      - /package-lock.json
+    outputs:
+      - dist
+  typecheck:
+    command: npm run typecheck
+    options:
+      cache: false
+  test:
+    command: npm run test
+    options:
+      cache: false
+  test-graph:
+    command: npm run test:graph
+    options:
+      cache: false
+      runInCI: false
