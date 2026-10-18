@@ -1,0 +1,116 @@
+- generic:
+  - generic [aria-hidden]:
+    - generic:
+      - generic:
+        - generic:
+          - button:
+            - generic: Toggle Sidebar
+          - generic:
+            - textbox:
+              - /placeholder: Search your company
+          - generic:
+            - button:
+              - generic: "1"
+            - button
+        - main:
+          - generic:
+            - generic:
+              - text: Sunday, October 11
+              - heading [level=1]: A little clarity, Maya.
+              - paragraph: Your company, moving together.
+            - region:
+              - generic:
+                - generic: Your company assistant
+                - textbox:
+                  - /placeholder: What would you like to get done today?
+                - generic:
+                  - generic: A little context. A lot of clarity.
+                  - generic:
+                    - button [disabled]
+              - generic:
+                - button: Assign a task
+                - button: What needs my attention?
+                - button: Who has capacity?
+              - button: Connect OpenAI to start your conversation
+            - generic:
+              - generic:
+                - heading [level=2]: On your radar
+                - button: All tasks
+              - generic:
+                - button:
+                  - generic:
+                    - strong: Review vendor agreements
+                    - generic: Arjun Mehta · 6h estimated
+                  - generic: Oct 13
+                - button:
+                  - generic:
+                    - strong: Reconcile September invoices
+                    - generic: Nisha Rao · 4h estimated
+                  - generic: Oct 12
+            - generic:
+              - generic:
+                - heading [level=2]: The latest from your team
+                - button: All updates
+              - button:
+                - generic: AM
+                - generic:
+                  - strong: Arjun Mehta
+                  - generic: Vendor review is progressing; final terms check tomorrow.
+              - button:
+                - generic: AM
+                - generic:
+                  - strong: Arjun Mehta
+                  - generic: Two agreements reviewed. I’m checking the delivery terms on the last one.
+              - button:
+                - generic: NR
+                - generic:
+                  - strong: Nisha Rao
+                  - generic: Waiting for two supplier receipts from operations.
+            - generic:
+              - generic:
+                - heading [level=2]: A little room to take on more
+                - generic: Simple weekly capacity
+              - button:
+                - generic: AM
+                - strong: Arjun Mehta
+                - generic: 2h available
+              - button:
+                - generic: LS
+                - strong: Leena Shah
+                - generic: 16h available
+              - button:
+                - generic: NR
+                - strong: Nisha Rao
+                - generic: 8h available
+            - generic: Company context is up to date
+  - dialog [ref=f3e228]:
+    - generic [ref=f3e229]:
+      - generic [ref=f3e230]: TASK DETAILS
+      - heading "Reconcile September invoices" [level=2] [ref=f3e231]
+      - paragraph [ref=f3e232]: Match supplier invoices with bank transactions and prepare the final summary.
+    - generic [ref=f3e233]:
+      - generic [ref=f3e234]: Blocked
+      - generic [ref=f3e235]: Oct 12, 11:27 PM
+      - generic [ref=f3e238]: 4h estimated
+    - generic [ref=f3e242]:
+      - generic [ref=f3e243]:
+        - generic [ref=f3e244]: NR
+        - generic [ref=f3e246]:
+          - strong [ref=f3e247]: Nisha Rao
+          - generic [ref=f3e248]: Finance lead
+      - paragraph [ref=f3e249]: Nisha is responsible for finance and has capacity for this work.
+    - generic [ref=f3e253]:
+      - strong [ref=f3e254]: Waiting on something
+      - paragraph [ref=f3e255]: Waiting for two supplier receipts from operations.
+    - generic [ref=f3e256]:
+      - heading "Updates" [level=3] [ref=f3e257]
+      - generic [ref=f3e260]:
+        - generic [ref=f3e261]:
+          - text: Nisha Rao
+          - generic [ref=f3e262]: · Employee confirmed · 1h ago
+        - paragraph [ref=f3e263]: Waiting for two supplier receipts from operations.
+    - generic [ref=f3e264]:
+      - generic [ref=f3e265]: Check-ins start after the next employee reply
+      - button "Employee simulator" [active] [ref=f3e266] [cursor=pointer]
+    - button "Cancel task" [ref=f3e267] [cursor=pointer]
+    - button "Close" [ref=f3e268] [cursor=pointer]

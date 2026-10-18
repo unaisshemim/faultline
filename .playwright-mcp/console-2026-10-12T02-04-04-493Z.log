@@ -1,0 +1,2 @@
+[     771ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/node_modules/.vite/deps/ra-core.js?v=832508fa:0
+[    8930ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/node_modules/.vite/deps/ra-core.js?v=832508fa:0

@@ -1,0 +1,65 @@
+- generic [ref=f3e4]:
+  - generic [ref=f3e66]:
+    - button "Open navigation" [ref=f3e214] [cursor=pointer]:
+      - generic [ref=f3e215]: Toggle Sidebar
+    - textbox "Search tasks" [ref=f3e71]:
+      - /placeholder: Search your company
+    - generic [ref=f3e73]:
+      - button "View updates" [ref=f3e74] [cursor=pointer]:
+        - generic [ref=f3e75]: "1"
+      - button "Create task through chat" [ref=f3e76] [cursor=pointer]
+  - main [ref=f3e78]:
+    - generic [ref=f3e370]:
+      - generic [ref=f3e371]:
+        - generic [ref=f3e372]: PEOPLE BEHIND THE PROGRESS
+        - heading "A team, in sync." [level=1] [ref=f3e373]
+        - paragraph [ref=f3e374]: Know who does what, and who has a little room for more.
+      - generic [ref=f3e375]:
+        - generic [ref=f3e376]:
+          - generic [ref=f3e377]:
+            - generic [ref=f3e378]: AM
+            - generic [ref=f3e380]:
+              - heading "Arjun Mehta" [level=2] [ref=f3e381]
+              - paragraph [ref=f3e382]: Operations lead
+            - generic [ref=f3e383]: Operations
+          - generic [ref=f3e384]:
+            - generic [ref=f3e385]: operations
+            - generic [ref=f3e386]: inventory
+          - generic [ref=f3e387]:
+            - generic [ref=f3e388]: 6h committed
+            - strong [ref=f3e389]: 2h available
+          - progressbar [ref=f3e390]
+          - generic [ref=f3e392]: of 8h weekly capacity
+          - button "Review vendor agreements" [ref=f3e394] [cursor=pointer]
+        - generic [ref=f3e395]:
+          - generic [ref=f3e396]:
+            - generic [ref=f3e397]: LS
+            - generic [ref=f3e399]:
+              - heading "Leena Shah" [level=2] [ref=f3e400]
+              - paragraph [ref=f3e401]: Operations associate
+            - generic [ref=f3e402]: Operations
+          - generic [ref=f3e403]:
+            - generic [ref=f3e404]: operations
+            - generic [ref=f3e405]: inventory
+          - generic [ref=f3e406]:
+            - generic [ref=f3e407]: 0h committed
+            - strong [ref=f3e408]: 16h available
+          - progressbar [ref=f3e409]
+          - generic [ref=f3e411]: of 16h weekly capacity
+        - generic [ref=f3e412]:
+          - generic [ref=f3e413]:
+            - generic [ref=f3e414]: NR
+            - generic [ref=f3e416]:
+              - heading "Nisha Rao" [level=2] [ref=f3e417]
+              - paragraph [ref=f3e418]: Finance lead
+            - generic [ref=f3e419]: Finance
+          - generic [ref=f3e420]:
+            - generic [ref=f3e421]: finance
+            - generic [ref=f3e422]: reporting
+          - generic [ref=f3e423]:
+            - generic [ref=f3e424]: 4h committed
+            - strong [ref=f3e425]: 8h available
+          - progressbar [ref=f3e426]
+          - generic [ref=f3e428]: of 12h weekly capacity
+          - button "Reconcile September invoices" [ref=f3e430] [cursor=pointer]
+      - paragraph [ref=f3e431]: Capacity is a simple demo estimate based on assigned effort, not calendar availability.

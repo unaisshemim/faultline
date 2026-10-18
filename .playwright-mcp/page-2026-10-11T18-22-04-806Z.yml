@@ -1,0 +1,178 @@
+- generic [ref=f3e4]:
+  - generic [ref=f3e434]:
+    - generic [ref=f3e435]:
+      - generic [ref=f3e436]:
+        - button "Company Brain home" [active] [ref=f3e437] [cursor=pointer]
+        - generic [ref=f3e438]: CompanyBrain
+      - generic [ref=f3e439]:
+        - text: Acme & Co.
+        - generic [ref=f3e441]: DEMO
+    - generic [ref=f3e442]:
+      - list "Main navigation" [ref=f3e443]:
+        - listitem [ref=f3e444]:
+          - button "Home" [ref=f3e445] [cursor=pointer]
+        - listitem [ref=f3e450]:
+          - button "Tasks 2" [ref=f3e451] [cursor=pointer]:
+            - generic [ref=f3e455]: Tasks
+            - generic [ref=f3e456]: "2"
+        - listitem [ref=f3e457]:
+          - button "Team" [ref=f3e458] [cursor=pointer]
+        - listitem [ref=f3e464]:
+          - button "Updates" [ref=f3e465] [cursor=pointer]
+        - listitem [ref=f3e471]:
+          - button "Company Brain" [ref=f3e472] [cursor=pointer]
+      - generic [ref=f3e477]:
+        - text: YOUR COMPANY
+        - button "Operations 2" [ref=f3e478] [cursor=pointer]:
+          - text: Operations
+          - generic [ref=f3e480]: "2"
+        - button "₹ Finance 1" [ref=f3e481] [cursor=pointer]:
+          - generic [ref=f3e482]: ₹
+          - text: Finance
+          - generic [ref=f3e483]: "1"
+    - generic [ref=f3e484]:
+      - button "Employee simulator See the other side" [ref=f3e485] [cursor=pointer]:
+        - generic [ref=f3e487]:
+          - text: Employee simulator
+          - generic [ref=f3e488]: See the other side
+      - button "M Maya Sharma Founder" [ref=f3e489] [cursor=pointer]:
+        - generic [ref=f3e490]: M
+        - generic [ref=f3e491]:
+          - text: Maya Sharma
+          - generic [ref=f3e492]: Founder
+  - generic [ref=f3e66]:
+    - generic [ref=f3e67]:
+      - textbox "Search tasks" [ref=f3e71]:
+        - /placeholder: Search your company
+      - generic [ref=f3e72]: ⌘ K
+    - generic [ref=f3e73]:
+      - button "View updates" [ref=f3e74] [cursor=pointer]:
+        - generic [ref=f3e75]: "1"
+      - button "Create task through chat" [ref=f3e76] [cursor=pointer]
+      - button "Company settings" [ref=f3e77] [cursor=pointer]
+  - main [ref=f3e78]:
+    - generic [ref=f3e79]:
+      - generic [ref=f3e80]:
+        - text: Sunday, October 11
+        - heading "A little clarity, Maya." [level=1] [ref=f3e81]
+        - paragraph [ref=f3e82]: Your company, moving together.
+      - region "Founder AI conversation" [ref=f3e83]:
+        - generic [ref=f3e84]:
+          - generic [ref=f3e85]:
+            - generic [ref=f3e89]: Your company assistant
+            - generic [ref=f3e90]: People. Priorities. Progress.
+          - textbox "Message Company Brain" [ref=f3e91]:
+            - /placeholder: What would you like to get done today?
+          - generic [ref=f3e92]:
+            - generic [ref=f3e93]: A little context. A lot of clarity.
+            - generic [ref=f3e97]:
+              - generic [ref=f3e98]: ↵ to send
+              - button "Send message" [disabled]
+        - generic [ref=f3e99]:
+          - button "Assign a task" [ref=f3e100] [cursor=pointer]
+          - button "What needs my attention?" [ref=f3e101] [cursor=pointer]
+          - button "Who has capacity?" [ref=f3e102] [cursor=pointer]
+        - button "Connect OpenAI to start your conversation" [ref=f3e103] [cursor=pointer]
+      - generic [ref=f3e105]:
+        - generic [ref=f3e106]:
+          - heading "On your radar" [level=2] [ref=f3e107]
+          - button "All tasks" [ref=f3e108] [cursor=pointer]
+        - generic [ref=f3e109]:
+          - button "Review vendor agreements Arjun Mehta · 6h estimated In progress Oct 13" [ref=f3e493] [cursor=pointer]:
+            - generic [ref=f3e112]:
+              - strong [ref=f3e113]: Review vendor agreements
+              - generic [ref=f3e114]: Arjun Mehta · 6h estimated
+            - generic [ref=f3e115]: In progress
+            - generic [ref=f3e116]: Oct 13
+          - button "Reconcile September invoices Nisha Rao · 4h estimated Blocked Oct 12" [ref=f3e494] [cursor=pointer]:
+            - generic [ref=f3e119]:
+              - strong [ref=f3e120]: Reconcile September invoices
+              - generic [ref=f3e121]: Nisha Rao · 4h estimated
+            - generic [ref=f3e122]: Blocked
+            - generic [ref=f3e123]: Oct 12
+      - generic [ref=f3e124]:
+        - generic [ref=f3e125]:
+          - heading "The latest from your team" [level=2] [ref=f3e126]
+          - button "All updates" [ref=f3e127] [cursor=pointer]
+        - button "AM Arjun Mehta·Vendor review is progressing; final terms check tomorrow. 9m ago" [ref=f3e495] [cursor=pointer]:
+          - generic [ref=f3e129]: AM
+          - generic [ref=f3e131]:
+            - strong [ref=f3e132]: Arjun Mehta
+            - text: ·Vendor review is progressing; final terms check tomorrow.
+          - generic [ref=f3e133]: 9m ago
+        - button "AM Arjun Mehta·Two agreements reviewed. I’m checking the delivery terms on the last one. 43m ago" [ref=f3e496] [cursor=pointer]:
+          - generic [ref=f3e135]: AM
+          - generic [ref=f3e137]:
+            - strong [ref=f3e138]: Arjun Mehta
+            - text: ·Two agreements reviewed. I’m checking the delivery terms on the last one.
+          - generic [ref=f3e139]: 43m ago
+        - button "NR Nisha Rao·Waiting for two supplier receipts from operations. 1h ago" [ref=f3e497] [cursor=pointer]:
+          - generic [ref=f3e141]: NR
+          - generic [ref=f3e143]:
+            - strong [ref=f3e144]: Nisha Rao
+            - text: ·Waiting for two supplier receipts from operations.
+          - generic [ref=f3e145]: 1h ago
+      - generic [ref=f3e146]:
+        - generic [ref=f3e147]:
+          - heading "A little room to take on more" [level=2] [ref=f3e148]
+          - generic [ref=f3e149]: Simple weekly capacity
+        - button "AM Arjun Mehta Operations lead 2h available" [ref=f3e498] [cursor=pointer]:
+          - generic [ref=f3e151]: AM
+          - strong [ref=f3e153]: Arjun Mehta
+          - generic [ref=f3e154]: Operations lead
+          - generic [ref=f3e155]: 2h available
+        - button "LS Leena Shah Operations associate 16h available" [ref=f3e499] [cursor=pointer]:
+          - generic [ref=f3e157]: LS
+          - strong [ref=f3e159]: Leena Shah
+          - generic [ref=f3e160]: Operations associate
+          - generic [ref=f3e161]: 16h available
+        - button "NR Nisha Rao Finance lead 8h available" [ref=f3e500] [cursor=pointer]:
+          - generic [ref=f3e163]: NR
+          - strong [ref=f3e165]: Nisha Rao
+          - generic [ref=f3e166]: Finance lead
+          - generic [ref=f3e167]: 8h available
+      - generic [ref=f3e168]:
+        - text: Company context is up to date
+        - generic [ref=f3e170]: Built for fewer “any updates?”
+  - complementary [ref=f3e171]:
+    - generic [ref=f3e172]:
+      - text: MAKE YOURSELF AT HOME
+      - heading "A good place to start." [level=2] [ref=f3e173]
+      - paragraph [ref=f3e174]: 3 of 5 steps completed. Little steps, big clarity.
+      - progressbar [ref=f3e175]
+      - generic [ref=f3e177]:
+        - button "Meet your team Responsibilities, all in one place" [ref=f3e178] [cursor=pointer]:
+          - generic [ref=f3e179]:
+            - text: Meet your team
+            - generic [ref=f3e180]: Responsibilities, all in one place
+        - button "Connect your company brain Your company graph is ready" [ref=f3e181] [cursor=pointer]:
+          - generic [ref=f3e182]:
+            - text: Connect your company brain
+            - generic [ref=f3e183]: Your company graph is ready
+        - button "Connect OpenAI Bring your assistant to life" [ref=f3e184] [cursor=pointer]:
+          - generic [ref=f3e185]:
+            - text: Connect OpenAI
+            - generic [ref=f3e186]: Bring your assistant to life
+        - button "Give your first assignment Just tell Company Brain" [ref=f3e187] [cursor=pointer]:
+          - generic [ref=f3e188]:
+            - text: Give your first assignment
+            - generic [ref=f3e189]: Just tell Company Brain
+        - button "Hear back from your team Try the employee conversation" [ref=f3e190] [cursor=pointer]:
+          - generic [ref=f3e191]:
+            - text: Hear back from your team
+            - generic [ref=f3e192]: Try the employee conversation
+    - generic [ref=f3e193]:
+      - heading "Company pulse" [level=3] [ref=f3e195]
+      - generic [ref=f3e197]:
+        - generic [ref=f3e198]: Work moving forward
+        - strong [ref=f3e199]: "2"
+      - button [ref=f3e200] [cursor=pointer]:
+        - generic [ref=f3e201]: Needs a little help
+        - strong [ref=f3e203]: "1"
+      - generic [ref=f3e204]:
+        - generic [ref=f3e205]: Done and dusted
+        - strong [ref=f3e207]: "1"
+    - generic [ref=f3e208]:
+      - paragraph [ref=f3e209]: You set the direction.Company Brain keepsthe little things moving.
+      - generic [ref=f3e210]: ONE CONVERSATION AT A TIME
+    - button "Company graph connected" [ref=f3e211] [cursor=pointer]

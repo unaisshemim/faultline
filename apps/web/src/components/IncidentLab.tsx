@@ -20,7 +20,7 @@ export function IncidentLab() {
   const [useAi, setUseAi] = useState(true)
   const load = useCallback(() => { void request<IncidentSnapshot>('/incident/status').then(setSnapshot).catch(error => setError(error.message)) }, [])
   useEffect(load, [load])
-  useEffect(() => { const previous = document.title; document.title = 'Faultline · Incident Lab'; return () => { document.title = previous } }, [])
+  useEffect(() => { const previous = document.title; document.title = 'Faultline — Trace the failure. Prove the fix.'; return () => { document.title = previous } }, [])
   const act = async (operation: 'start' | 'investigate' | 'rollback' | 'check') => {
     if (busy) return
     setBusy(operation); setError('')
@@ -45,7 +45,7 @@ export function IncidentLab() {
   const selectService = (name: ServiceName) => { setSelectedService(value => value === name ? null : name); setSelectedRecord(null); setTab('evidence') }
   const inspectRecord = (id: string) => { setSelectedRecord(id); setSelectedService(null); setTab('evidence') }
   return <div className="incident-lab">
-    <nav className="incident-topbar"><Link to="/" className="incident-brand"><Workflow size={20} /><strong>FAULTLINE</strong><span>incident lab</span></Link><div className="incident-environment"><span />Simulated environment<span className="environment-divider">/</span>Local sandbox</div><Link to="/" className="incident-workspace-link">Company Brain <ArrowRight size={14} /></Link></nav>
+    <nav className="incident-topbar"><Link to="/" className="incident-brand"><Workflow size={20} /><strong>FAULTLINE</strong><span>incident lab</span></Link><div className="incident-environment"><span />Simulated environment<span className="environment-divider">/</span>Local sandbox</div><Link to="/" className="incident-workspace-link">Faultline home <ArrowRight size={14} /></Link></nav>
     <main className="incident-shell">
       <header className="incident-hero"><div><div className="incident-eyebrow">TRACK 01 <span> / </span> AGENTS THAT ACT ON CONNECTED DATA</div><h1>Five alerts. One underlying failure.</h1><p>Trace the dependencies. Challenge the obvious suspect. Verify the fix.</p></div><div className="incident-controls"><label>FAULT INJECTION<select aria-label="Fault injection target" value={fault} disabled={!!busy} onChange={event => setFault(event.target.value as FaultTarget)}><option value="product-data">Product-data configuration</option><option value="payments">Payments configuration</option></select></label><button className="incident-trigger" disabled={!!busy || !snapshot} onClick={() => void act('start')}>{busy === 'start' ? <Loader2 className="animate-spin" size={15} /> : <Play size={14} />}{run ? 'Restart incident' : 'Trigger incident'}</button></div></header>
       {error && <div className="incident-error" role="alert"><AlertTriangle size={15} />{error}<button onClick={() => { setError(''); load() }}>Retry connection</button></div>}

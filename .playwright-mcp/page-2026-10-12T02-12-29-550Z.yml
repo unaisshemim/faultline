@@ -1,0 +1,82 @@
+- generic [ref=f5e3]:
+  - generic [ref=f5e864]:
+    - list [ref=f5e866]:
+      - listitem [ref=f5e867]:
+        - link "Company Brain" [ref=f5e868] [cursor=pointer]:
+          - /url: "#/"
+    - generic [ref=f5e879]:
+      - generic [ref=f5e880]:
+        - generic [ref=f5e881]: Workspace
+        - list [ref=f5e883]:
+          - listitem [ref=f5e884]:
+            - link "Dashboard" [ref=f5e885] [cursor=pointer]:
+              - /url: "#/"
+          - listitem [ref=f5e890]:
+            - link "Tasks" [ref=f5e891] [cursor=pointer]:
+              - /url: "#/tasks"
+          - listitem [ref=f5e896]:
+            - link "Team" [ref=f5e897] [cursor=pointer]:
+              - /url: "#/team"
+          - listitem [ref=f5e903]:
+            - link "Updates" [ref=f5e904] [cursor=pointer]:
+              - /url: "#/updates"
+          - listitem [ref=f5e1037]:
+            - link "Integrations" [ref=f5e1038] [cursor=pointer]:
+              - /url: "#/integrations"
+      - generic [ref=f5e909]:
+        - generic [ref=f5e910]: Assistant
+        - list [ref=f5e912]:
+          - listitem [ref=f5e913]:
+            - link "Company assistant" [ref=f5e914] [cursor=pointer]:
+              - /url: "#/"
+    - list [ref=f5e920]:
+      - listitem [ref=f5e921]:
+        - link "MS Maya Sharma Acme & Co. · Founder" [ref=f5e922] [cursor=pointer]:
+          - /url: "#/?settings=1"
+          - generic [ref=f5e923]: MS
+          - generic [ref=f5e924]:
+            - generic [ref=f5e925]: Maya Sharma
+            - generic [ref=f5e926]: Acme & Co. · Founder
+  - main [ref=f5e71]:
+    - generic [ref=f5e72]:
+      - button "Toggle navigation" [active] [ref=f5e505] [cursor=pointer]:
+        - generic [ref=f5e74]: Toggle Sidebar
+      - generic [ref=f5e76]: Workspace
+      - generic [ref=f5e79]: Integrations
+      - generic [ref=f5e80]:
+        - generic [ref=f5e81]: Demo workspace
+        - button "Switch to dark theme" [ref=f5e929] [cursor=pointer]
+    - generic [ref=f5e1042]:
+      - generic [ref=f5e1043]:
+        - generic [ref=f5e1044]: YOUR CONNECTED WORKSPACE
+        - generic [ref=f5e1045]:
+          - heading "Integrations" [level=1] [ref=f5e1046]
+          - button "Refresh" [ref=f5e1047] [cursor=pointer]
+        - paragraph [ref=f5e1048]: Bring your everyday tools into Company Brain. Connect each account on your terms.
+      - generic [ref=f5e1049]: Loading integrations…
+      - generic [ref=f5e1052]:
+        - generic [ref=f5e1053]:
+          - generic [ref=f5e1054]: Checking…
+          - generic [ref=f5e1060]:
+            - heading "Microsoft Outlook" [level=2] [ref=f5e1061]
+            - paragraph [ref=f5e1062]: Connect your Microsoft mailbox and calendar to Company Brain.
+          - generic [ref=f5e1063]:
+            - generic [ref=f5e1064]: Email access
+            - generic [ref=f5e1067]: Calendar access
+          - paragraph [ref=f5e1070]: Read your email and calendar. Company Brain cannot send email or change events.
+          - generic [ref=f5e1074]:
+            - button "Connect Outlook" [disabled]
+        - generic [ref=f5e1075]:
+          - generic [ref=f5e1076]: Checking…
+          - generic [ref=f5e1081]:
+            - heading "Microsoft Teams" [level=2] [ref=f5e1082]
+            - paragraph [ref=f5e1083]: Connect your work account and make your teams and channels available.
+          - generic [ref=f5e1084]:
+            - generic [ref=f5e1085]: Teams access
+            - generic [ref=f5e1088]: Channel discovery
+          - paragraph [ref=f5e1091]: Read basic team and channel details. Company Brain cannot send messages or read conversations.
+          - generic [ref=f5e1095]:
+            - button "Connect Teams" [disabled]
+      - generic [ref=f5e1100]:
+        - strong [ref=f5e1101]: You control your connections
+        - paragraph [ref=f5e1102]: Microsoft asks you to approve access before connecting. Disconnecting removes the saved credentials from this workspace. Automatic sync and live Teams messaging are not enabled yet.

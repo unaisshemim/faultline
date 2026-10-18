@@ -20,6 +20,7 @@ import { FounderChat } from '@/components/FounderChat'
 import { DemoTeamsPanel } from '@/components/DemoTeamsPanel'
 import { TaskDetail } from '@/components/TaskDetail'
 import { Integrations } from '@/components/Integrations'
+import { FaultlineLanding } from '@/components/FaultlineLanding'
 import { IncidentLab } from '@/components/IncidentLab'
 import { LiveTestChat } from '@/components/LiveTestChat'
 import { TeamsChats } from '@/components/TeamsChats'
@@ -29,12 +30,12 @@ type Page = 'home' | 'tasks' | 'team' | 'activity'
 function IconButton({ label, children, onClick, className }: { label: string; children: React.ReactNode; onClick: () => void; className?: string }) {
   return <Tooltip><TooltipTrigger asChild><Button variant="ghost" size="icon" aria-label={label} onClick={onClick} className={className}>{children}</Button></TooltipTrigger><TooltipContent>{label}</TooltipContent></Tooltip>
 }
-export default function App() { return <Admin dataProvider={dataProvider} dashboard={Workspace}><Resource name="tasks" options={{ label: 'Tasks' }} icon={ListTodo} list={Workspace} /><Resource name="team" options={{ label: 'Team' }} icon={UsersRound} list={Workspace} /><Resource name="updates" options={{ label: 'Updates' }} icon={Clock3} list={Workspace} /><Resource name="chats" options={{ label: 'Chats' }} icon={MessageSquare} list={TeamsChats} /><Resource name="incident" options={{ label: 'Incident lab' }} icon={Workflow} list={IncidentLab} /><Resource name="live-test" options={{ label: 'Live test' }} icon={Mic} list={LiveTestChat} /><Resource name="integrations" options={{ label: 'Integrations' }} icon={Plug} list={Integrations} /></Admin> }
+export default function App() { return <Admin dataProvider={dataProvider} dashboard={FaultlineLanding}><Resource name="workspace" options={{ label: 'Company workspace' }} list={Workspace} /><Resource name="tasks" options={{ label: 'Tasks' }} icon={ListTodo} list={Workspace} /><Resource name="team" options={{ label: 'Team' }} icon={UsersRound} list={Workspace} /><Resource name="updates" options={{ label: 'Updates' }} icon={Clock3} list={Workspace} /><Resource name="chats" options={{ label: 'Chats' }} icon={MessageSquare} list={TeamsChats} /><Resource name="incident" options={{ label: 'Incident lab' }} icon={Workflow} list={IncidentLab} /><Resource name="live-test" options={{ label: 'Live test' }} icon={Mic} list={LiveTestChat} /><Resource name="integrations" options={{ label: 'Integrations' }} icon={Plug} list={Integrations} /></Admin> }
 function Workspace() {
   const location = useLocation()
   const routeNavigate = useNavigate()
   const page: Page = location.pathname.startsWith('/tasks') ? 'tasks' : location.pathname.startsWith('/team') ? 'team' : location.pathname.startsWith('/updates') ? 'activity' : 'home'
-  const setPage = useCallback((next: Page) => routeNavigate(next === 'home' ? '/' : next === 'activity' ? '/updates' : `/${next}`), [routeNavigate])
+  const setPage = useCallback((next: Page) => routeNavigate(next === 'home' ? '/workspace' : next === 'activity' ? '/updates' : `/${next}`), [routeNavigate])
   const [data, setData] = useState<WorkData | null>(null)
   const [loadError, setLoadError] = useState('')
   const [settings, setSettings] = useState(false)
@@ -42,7 +43,7 @@ function Workspace() {
   const changeSettings = (open: boolean) => { setSettings(open); if (!open && location.search) routeNavigate(location.pathname, { replace: true }) }
   const [newChatId, setNewChatId] = useState(() => crypto.randomUUID())
   const chatId = new URLSearchParams(location.search).get('chat') || newChatId
-  const newConversation = () => { setNewChatId(crypto.randomUUID()); routeNavigate('/') }
+  const newConversation = () => { setNewChatId(crypto.randomUUID()); routeNavigate('/workspace') }
   const [demo, setDemo] = useState(false)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [query, setQuery] = useState('')
@@ -55,8 +56,8 @@ function Workspace() {
   const refresh = useCallback(() => { void getWork().then(value => { setData(value); setLoadError('') }).catch(() => setLoadError('Could not reach the local API. Start the backend, then retry.')) }, [])
   useEffect(() => { refresh(); const timer = setInterval(refresh, 5000); return () => clearInterval(timer) }, [refresh])
   useEffect(() => { const handler = (event: KeyboardEvent) => { if ((event.metaKey || event.ctrlKey) && event.key === 'k') { event.preventDefault(); searchRef.current?.focus() } }; window.addEventListener('keydown', handler); return () => window.removeEventListener('keydown', handler) }, [])
-  const startChat = useCallback((text = '') => { routeNavigate(text ? `/?prompt=${encodeURIComponent(text)}` : '/'); setSidebarOpen(false); setTimeout(() => document.querySelector<HTMLTextAreaElement>('.composer-input')?.focus(), 0) }, [setSidebarOpen, routeNavigate])
-  const clearStarter = useCallback(() => routeNavigate(`/?chat=${encodeURIComponent(chatId)}`, { replace: true }), [routeNavigate, chatId])
+  const startChat = useCallback((text = '') => { routeNavigate(text ? `/workspace?prompt=${encodeURIComponent(text)}` : '/workspace'); setSidebarOpen(false); setTimeout(() => document.querySelector<HTMLTextAreaElement>('.composer-input')?.focus(), 0) }, [setSidebarOpen, routeNavigate])
+  const clearStarter = useCallback(() => routeNavigate(`/workspace?chat=${encodeURIComponent(chatId)}`, { replace: true }), [routeNavigate, chatId])
   const navigate = (next: Page) => { setPage(next); setSidebarOpen(false); setQuery('') }
   const departmentNames = [...new Set(data?.employees.map(employee => employee.department.trim() || 'Other') ?? [])]
   const departmentOrder = ['R&D', 'Support Team', 'Tech Team', 'Finance', 'Operations']
