@@ -1,0 +1,90 @@
+- generic:
+  - generic [aria-hidden]:
+    - generic:
+      - main:
+        - generic:
+          - button:
+            - generic: Toggle Sidebar
+          - generic: Workspace
+          - generic: Tasks
+          - generic:
+            - button
+        - generic:
+          - generic:
+            - generic:
+              - textbox:
+                - /placeholder: Search your company
+            - generic:
+              - button:
+                - generic: "1"
+              - button
+              - button
+          - generic:
+            - generic:
+              - generic:
+                - generic: A CLEARER PICTURE
+                - generic:
+                  - heading [level=1]: Tasks
+                  - button: Create with AI
+                - paragraph: Every task has a person, a purpose, and a next step.
+              - group:
+                - button:
+                  - text: All tasks
+                  - generic: "3"
+                - button:
+                  - text: Active
+                  - generic: "1"
+                - button:
+                  - text: Blocked
+                  - generic: "1"
+                - button:
+                  - text: Completed
+                  - generic: "2"
+              - generic:
+                - button:
+                  - generic:
+                    - strong: Reconcile September invoices
+                    - generic: Nisha Rao · 4h estimated
+                  - generic: Today
+              - paragraph:
+                - text: New work starts with a conversation.
+                - button: Talk to Company Brain
+  - dialog "Sidebar" [active] [ref=f5e438]:
+    - generic [ref=f5e439]:
+      - heading "Sidebar" [level=2]
+      - paragraph: Displays the mobile sidebar.
+    - generic [ref=f5e440]:
+      - list [ref=f5e442]:
+        - listitem [ref=f5e443]:
+          - link "Company Brain" [ref=f5e444] [cursor=pointer]:
+            - /url: "#/"
+      - generic [ref=f5e455]:
+        - generic [ref=f5e456]:
+          - generic [ref=f5e457]: Workspace
+          - list [ref=f5e459]:
+            - listitem [ref=f5e460]:
+              - link "Dashboard" [ref=f5e461] [cursor=pointer]:
+                - /url: "#/"
+            - listitem [ref=f5e466]:
+              - link "Tasks" [ref=f5e467] [cursor=pointer]:
+                - /url: "#/tasks"
+            - listitem [ref=f5e472]:
+              - link "Team" [ref=f5e473] [cursor=pointer]:
+                - /url: "#/team"
+            - listitem [ref=f5e479]:
+              - link "Updates" [ref=f5e480] [cursor=pointer]:
+                - /url: "#/updates"
+        - generic [ref=f5e485]:
+          - generic [ref=f5e486]: Assistant
+          - list [ref=f5e488]:
+            - listitem [ref=f5e489]:
+              - link "Company assistant" [ref=f5e490] [cursor=pointer]:
+                - /url: "#/"
+      - list [ref=f5e496]:
+        - listitem [ref=f5e497]:
+          - link "MS Maya Sharma Acme & Co. · Founder" [ref=f5e498] [cursor=pointer]:
+            - /url: "#/?settings=1"
+            - generic [ref=f5e499]: MS
+            - generic [ref=f5e500]:
+              - generic [ref=f5e501]: Maya Sharma
+              - generic [ref=f5e502]: Acme & Co. · Founder

@@ -1,0 +1,151 @@
+- generic [ref=f5e3]:
+  - generic [ref=f5e864]:
+    - list [ref=f5e866]:
+      - listitem [ref=f5e867]:
+        - link "Company Brain" [ref=f5e868] [cursor=pointer]:
+          - /url: "#/"
+    - generic [ref=f5e879]:
+      - generic [ref=f5e880]:
+        - generic [ref=f5e881]: Workspace
+        - list [ref=f5e883]:
+          - listitem [ref=f5e884]:
+            - link "Dashboard" [ref=f5e885] [cursor=pointer]:
+              - /url: "#/"
+          - listitem [ref=f5e890]:
+            - link "Tasks" [ref=f5e891] [cursor=pointer]:
+              - /url: "#/tasks"
+          - listitem [ref=f5e896]:
+            - link "Team" [ref=f5e897] [cursor=pointer]:
+              - /url: "#/team"
+          - listitem [ref=f5e903]:
+            - link "Updates" [ref=f5e904] [cursor=pointer]:
+              - /url: "#/updates"
+      - generic [ref=f5e909]:
+        - generic [ref=f5e910]: Assistant
+        - list [ref=f5e912]:
+          - listitem [ref=f5e913]:
+            - link "Company assistant" [ref=f5e914] [cursor=pointer]:
+              - /url: "#/"
+    - list [ref=f5e920]:
+      - listitem [ref=f5e921]:
+        - link "MS Maya Sharma Acme & Co. · Founder" [ref=f5e922] [cursor=pointer]:
+          - /url: "#/?settings=1"
+          - generic [ref=f5e923]: MS
+          - generic [ref=f5e924]:
+            - generic [ref=f5e925]: Maya Sharma
+            - generic [ref=f5e926]: Acme & Co. · Founder
+  - main [ref=f5e71]:
+    - generic [ref=f5e72]:
+      - button "Toggle navigation" [ref=f5e505] [cursor=pointer]:
+        - generic [ref=f5e74]: Toggle Sidebar
+      - generic [ref=f5e76]: Workspace
+      - generic [ref=f5e79]: Dashboard
+      - generic [ref=f5e80]:
+        - generic [ref=f5e81]: Demo workspace
+        - button "Switch to dark theme" [active] [ref=f5e929] [cursor=pointer]
+    - generic [ref=f5e571]:
+      - generic [ref=f5e572]:
+        - generic [ref=f5e573]:
+          - textbox "Search tasks" [ref=f5e577]:
+            - /placeholder: Search your company
+          - generic [ref=f5e930]: ⌘ K
+        - generic [ref=f5e578]:
+          - button "View updates" [ref=f5e579] [cursor=pointer]:
+            - generic [ref=f5e931]: "1"
+          - button "Create task through chat" [ref=f5e580] [cursor=pointer]
+          - button "Company settings" [ref=f5e581] [cursor=pointer]
+      - generic [ref=f5e932]:
+        - generic [ref=f5e933]:
+          - generic [ref=f5e934]: Monday, October 12
+          - heading "Dashboard" [level=1] [ref=f5e935]
+          - paragraph [ref=f5e936]: Welcome back, Maya. Here’s what’s happening with your team.
+          - button "Employee simulator" [ref=f5e937] [cursor=pointer]
+        - generic [ref=f5e938]:
+          - button "Active tasks 1 Currently in motion" [ref=f5e939] [cursor=pointer]:
+            - generic [ref=f5e940]: Active tasks
+            - strong [ref=f5e941]: "1"
+            - generic [ref=f5e942]: Currently in motion
+          - button "Blocked 1 Needs your attention" [ref=f5e943] [cursor=pointer]:
+            - generic [ref=f5e944]: Blocked
+            - strong [ref=f5e945]: "1"
+            - generic [ref=f5e946]: Needs your attention
+          - button "Completed 2 Work delivered" [ref=f5e947] [cursor=pointer]:
+            - generic [ref=f5e948]: Completed
+            - strong [ref=f5e949]: "2"
+            - generic [ref=f5e950]: Work delivered
+          - button "Team members 3 Across your company" [ref=f5e951] [cursor=pointer]:
+            - generic [ref=f5e952]: Team members
+            - strong [ref=f5e953]: "3"
+            - generic [ref=f5e954]: Across your company
+        - region "Founder AI conversation" [ref=f5e955]:
+          - generic [ref=f5e956]:
+            - generic [ref=f5e957]:
+              - generic [ref=f5e961]: Your company assistant
+              - generic [ref=f5e962]: People. Priorities. Progress.
+            - textbox "Message Company Brain" [ref=f5e963]:
+              - /placeholder: What would you like to get done today?
+              - text: Prepare the inventory report
+            - generic [ref=f5e964]:
+              - generic [ref=f5e965]: A little context. A lot of clarity.
+              - generic [ref=f5e969]:
+                - generic [ref=f5e970]: ↵ to send
+                - button "Send message" [ref=f5e971] [cursor=pointer]
+          - generic [ref=f5e972]:
+            - button "Assign a task" [ref=f5e973] [cursor=pointer]
+            - button "What needs my attention?" [ref=f5e974] [cursor=pointer]
+            - button "Who has capacity?" [ref=f5e975] [cursor=pointer]
+          - button "Connect OpenAI to start your conversation" [ref=f5e976] [cursor=pointer]
+        - generic [ref=f5e978]:
+          - generic [ref=f5e979]:
+            - heading "Active tasks" [level=2] [ref=f5e980]
+            - button "All tasks" [ref=f5e981] [cursor=pointer]
+          - button "Reconcile September invoices Nisha Rao · 4h estimated Blocked Today" [ref=f5e983] [cursor=pointer]:
+            - generic [ref=f5e985]:
+              - strong [ref=f5e986]: Reconcile September invoices
+              - generic [ref=f5e987]: Nisha Rao · 4h estimated
+            - generic [ref=f5e988]: Blocked
+            - generic [ref=f5e989]: Today
+        - generic [ref=f5e990]:
+          - generic [ref=f5e991]:
+            - heading "The latest from your team" [level=2] [ref=f5e992]
+            - button "All updates" [ref=f5e993] [cursor=pointer]
+          - button "AM Arjun Mehta·This task is complete. 6h ago" [ref=f5e994] [cursor=pointer]:
+            - generic [ref=f5e995]: AM
+            - generic [ref=f5e997]:
+              - strong [ref=f5e998]: Arjun Mehta
+              - text: ·This task is complete.
+            - generic [ref=f5e999]: 6h ago
+          - button "AM Arjun Mehta·hi 6h ago" [ref=f5e1000] [cursor=pointer]:
+            - generic [ref=f5e1001]: AM
+            - generic [ref=f5e1003]:
+              - strong [ref=f5e1004]: Arjun Mehta
+              - text: ·hi
+            - generic [ref=f5e1005]: 6h ago
+          - button "AM Arjun Mehta·Vendor review is progressing; final terms check tomorrow. 7h ago" [ref=f5e1006] [cursor=pointer]:
+            - generic [ref=f5e1007]: AM
+            - generic [ref=f5e1009]:
+              - strong [ref=f5e1010]: Arjun Mehta
+              - text: ·Vendor review is progressing; final terms check tomorrow.
+            - generic [ref=f5e1011]: 7h ago
+        - generic [ref=f5e1012]:
+          - generic [ref=f5e1013]:
+            - heading "Team capacity" [level=2] [ref=f5e1014]
+            - generic [ref=f5e1015]: Simple weekly capacity
+          - button "AM Arjun Mehta Operations lead 8h available" [ref=f5e1016] [cursor=pointer]:
+            - generic [ref=f5e1017]: AM
+            - strong [ref=f5e1019]: Arjun Mehta
+            - generic [ref=f5e1020]: Operations lead
+            - generic [ref=f5e1021]: 8h available
+          - button "LS Leena Shah Operations associate 16h available" [ref=f5e1022] [cursor=pointer]:
+            - generic [ref=f5e1023]: LS
+            - strong [ref=f5e1025]: Leena Shah
+            - generic [ref=f5e1026]: Operations associate
+            - generic [ref=f5e1027]: 16h available
+          - button "NR Nisha Rao Finance lead 8h available" [ref=f5e1028] [cursor=pointer]:
+            - generic [ref=f5e1029]: NR
+            - strong [ref=f5e1031]: Nisha Rao
+            - generic [ref=f5e1032]: Finance lead
+            - generic [ref=f5e1033]: 8h available
+        - generic [ref=f5e1034]:
+          - text: Company context is up to date
+          - generic [ref=f5e1036]: Built for fewer “any updates?”

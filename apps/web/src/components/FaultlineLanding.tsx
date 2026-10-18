@@ -1,0 +1,20 @@
+import { ArrowRight, Check, GitBranch, ShieldCheck, Workflow } from 'lucide-react'
+import { Link } from 'react-router'
+import './faultline-landing.css'
+
+export function FaultlineLanding() {
+  return <div className="faultline-landing">
+    <nav className="fl-nav" aria-label="Main navigation"><Link to="/" className="fl-brand"><Workflow size={23} />Faultline<span>INCIDENT INVESTIGATOR</span></Link><Link to="/incident" className="fl-nav-link">Open sandbox <ArrowRight size={15} /></Link></nav>
+    <main>
+      <section className="fl-hero">
+        <div className="fl-copy"><div className="fl-eyebrow"><span /> GRAPH-POWERED INCIDENT INVESTIGATION</div><h1>Trace the failure.<br /><em>Prove the fix.</em></h1><p className="fl-description">A graph-powered incident investigator that connects service dependencies, logs and recent changes to uncover likely causes, explain its evidence, and verify recovery after an approved sandbox fix.</p><Link to="/incident" className="fl-primary">Watch Faultline connect the dots <ArrowRight size={17} /></Link><div className="fl-demo-note"><ShieldCheck size={14} />Simulated environment. Executable failures and recovery.</div></div>
+        <div className="fl-preview" aria-label="Illustrative incident investigation preview"><div className="fl-preview-bar"><span><span className="fl-live-dot" /> INCIDENT / CHECKOUT</span><span>ILLUSTRATIVE PREVIEW</span></div><div className="fl-preview-heading"><span>01 / CONNECT THE DOTS</span><h2>Five alerts.<br />One underlying failure.</h2></div>
+          <svg viewBox="0 0 560 265" role="img" aria-label="Checkout connects to pricing, inventory and payments. Pricing and inventory converge on product-data."><defs><pattern id="fl-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".65" fill="#39434b" /></pattern></defs><rect width="560" height="265" fill="url(#fl-dots)" /><g fill="none" strokeWidth="1.5"><path d="M122 130 C160 130 160 55 202 55 M122 130 C160 130 160 150 202 150 M312 55 C360 55 355 105 405 105 M312 150 C360 150 355 105 405 105" stroke="#e4b77c" /><path d="M122 130 C160 130 160 235 202 235" stroke="#43515a" /></g>{[{x:12,y:108,name:'checkout',healthy:false},{x:202,y:33,name:'pricing',healthy:false},{x:202,y:128,name:'inventory',healthy:false},{x:202,y:213,name:'payments',healthy:true},{x:405,y:83,name:'product-data',healthy:false}].map(node => <g key={node.name}><rect x={node.x} y={node.y} width="138" height="44" rx="6" fill="#191f24" stroke={node.name === 'product-data' ? '#e4b77c' : '#39434b'} /><circle cx={node.x+14} cy={node.y+22} r="3" fill={node.healthy ? '#82c7af' : '#e4b77c'} /><text x={node.x+25} y={node.y+26} fill="#e5e9ec" fontSize="12" fontFamily="monospace">{node.name}</text></g>)}</svg>
+          <div className="fl-reveal"><GitBranch size={17} /><div><strong>Both failing paths converge on product-data.</strong><p>Payments is healthy. Follow the evidence upstream.</p></div></div><div className="fl-preview-foot"><span><Check size={13} /> Dependencies</span><span><Check size={13} /> Logs</span><span><Check size={13} /> Recent changes</span></div>
+        </div>
+      </section>
+      <section className="fl-demo" aria-label="Demo workflow"><div className="fl-demo-intro"><span className="fl-eyebrow">THE 90-SECOND DEMO</span><h2>Five alerts. One underlying failure.<br /><span>Watch Faultline connect the dots.</span></h2></div><div className="fl-steps">{[{n:'01',title:'Trigger the incident',text:'Checkout fails. Several services turn red. A recent deployment looks suspicious.'},{n:'02',title:'Investigate the evidence',text:'Query FalkorDB, trace dependencies, and inspect the log records behind the likely cause.'},{n:'03',title:'Approve. Recheck. Recover.',text:'Approve a configuration rollback in the sandbox. Run the same request again to verify recovery.'}].map(step => <div className="fl-step" key={step.n}><span>{step.n}</span><h3>{step.title}</h3><p>{step.text}</p></div>)}</div></section>
+    </main>
+    <footer className="fl-footer"><span>Faultline <span> / </span> Trace the failure. Prove the fix.</span><span>Local sandbox · Human-approved action</span></footer>
+  </div>
+}

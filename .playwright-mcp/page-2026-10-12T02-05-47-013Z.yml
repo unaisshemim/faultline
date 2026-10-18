@@ -1,0 +1,16 @@
+- main [ref=f5e71]:
+  - generic [ref=f5e72]:
+    - button "Toggle navigation" [ref=f5e505] [cursor=pointer]:
+      - generic [ref=f5e74]: Toggle Sidebar
+    - generic [ref=f5e76]: Workspace
+    - generic [ref=f5e79]: Dashboard
+    - button "Switch to light theme" [ref=f5e506] [cursor=pointer]
+  - generic [ref=f5e571]:
+    - generic [ref=f5e572]:
+      - textbox "Search tasks" [ref=f5e577]:
+        - /placeholder: Search your company
+      - generic [ref=f5e578]:
+        - button "View updates" [ref=f5e579] [cursor=pointer]
+        - button "Create task through chat" [ref=f5e580] [cursor=pointer]
+        - button "Company settings" [ref=f5e581] [cursor=pointer]
+    - generic [ref=f5e582]: Bringing your company into focus…

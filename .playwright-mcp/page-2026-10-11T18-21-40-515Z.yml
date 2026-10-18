@@ -1,0 +1,90 @@
+- generic:
+  - generic [aria-hidden]:
+    - generic:
+      - generic:
+        - generic:
+          - button:
+            - generic: Toggle Sidebar
+          - generic:
+            - textbox:
+              - /placeholder: Search your company
+          - generic:
+            - button:
+              - generic: "1"
+            - button
+        - main:
+          - generic:
+            - generic:
+              - generic: A CLEARER PICTURE
+              - generic:
+                - heading [level=1]: Your team’s work
+                - button: Create with AI
+              - paragraph: Every task has a person, a purpose, and a next step.
+            - group:
+              - button:
+                - text: All tasks
+                - generic: "3"
+              - button:
+                - text: Active
+                - generic: "2"
+              - button:
+                - text: Blocked
+                - generic: "1"
+              - button:
+                - text: Completed
+                - generic: "1"
+            - generic:
+              - button:
+                - generic:
+                  - strong: Reconcile September invoices
+                  - generic: Nisha Rao · 4h estimated
+                - generic: Oct 12
+            - paragraph:
+              - text: New work starts with a conversation.
+              - button: Talk to Company Brain
+  - dialog "Sidebar" [ref=f3e308]:
+    - generic [ref=f3e309]:
+      - heading "Sidebar" [level=2]
+      - paragraph: Displays the mobile sidebar.
+    - generic [ref=f3e310]:
+      - generic [ref=f3e311]:
+        - generic [ref=f3e312]:
+          - button "Company Brain home" [active] [ref=f3e313] [cursor=pointer]
+          - generic [ref=f3e314]: CompanyBrain
+          - button "Close navigation" [ref=f3e315] [cursor=pointer]
+        - generic [ref=f3e316]:
+          - text: Acme & Co.
+          - generic [ref=f3e318]: DEMO
+      - generic [ref=f3e319]:
+        - list "Main navigation" [ref=f3e320]:
+          - listitem [ref=f3e321]:
+            - button "Home" [ref=f3e322] [cursor=pointer]
+          - listitem [ref=f3e327]:
+            - button "Tasks 2" [ref=f3e328] [cursor=pointer]:
+              - generic [ref=f3e332]: Tasks
+              - generic [ref=f3e333]: "2"
+          - listitem [ref=f3e334]:
+            - button "Team" [ref=f3e335] [cursor=pointer]
+          - listitem [ref=f3e341]:
+            - button "Updates" [ref=f3e342] [cursor=pointer]
+          - listitem [ref=f3e348]:
+            - button "Company Brain" [ref=f3e349] [cursor=pointer]
+        - generic [ref=f3e354]:
+          - text: YOUR COMPANY
+          - button "Operations 2" [ref=f3e355] [cursor=pointer]:
+            - text: Operations
+            - generic [ref=f3e357]: "2"
+          - button "₹ Finance 1" [ref=f3e358] [cursor=pointer]:
+            - generic [ref=f3e359]: ₹
+            - text: Finance
+            - generic [ref=f3e360]: "1"
+      - generic [ref=f3e361]:
+        - button "Employee simulator See the other side" [ref=f3e362] [cursor=pointer]:
+          - generic [ref=f3e364]:
+            - text: Employee simulator
+            - generic [ref=f3e365]: See the other side
+        - button "M Maya Sharma Founder" [ref=f3e366] [cursor=pointer]:
+          - generic [ref=f3e367]: M
+          - generic [ref=f3e368]:
+            - text: Maya Sharma
+            - generic [ref=f3e369]: Founder

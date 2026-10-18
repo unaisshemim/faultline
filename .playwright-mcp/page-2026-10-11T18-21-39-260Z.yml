@@ -1,0 +1,39 @@
+- generic [ref=f3e4]:
+  - generic [ref=f3e66]:
+    - button "Open navigation" [ref=f3e214] [cursor=pointer]:
+      - generic [ref=f3e215]: Toggle Sidebar
+    - textbox "Search tasks" [ref=f3e71]:
+      - /placeholder: Search your company
+    - generic [ref=f3e73]:
+      - button "View updates" [ref=f3e74] [cursor=pointer]:
+        - generic [ref=f3e75]: "1"
+      - button "Create task through chat" [ref=f3e76] [cursor=pointer]
+  - main [ref=f3e78]:
+    - generic [ref=f3e270]:
+      - generic [ref=f3e271]:
+        - generic [ref=f3e272]: A CLEARER PICTURE
+        - generic [ref=f3e273]:
+          - heading "Your team’s work" [level=1] [ref=f3e274]
+          - button "Create with AI" [ref=f3e275] [cursor=pointer]
+        - paragraph [ref=f3e276]: Every task has a person, a purpose, and a next step.
+      - group "Filter tasks" [ref=f3e277]:
+        - button "All tasks 3" [ref=f3e278] [cursor=pointer]:
+          - text: All tasks
+          - generic [ref=f3e279]: "3"
+        - button "Active 2" [ref=f3e280] [cursor=pointer]:
+          - text: Active
+          - generic [ref=f3e281]: "2"
+        - button "Blocked 1" [active] [ref=f3e282] [cursor=pointer]:
+          - text: Blocked
+          - generic [ref=f3e283]: "1"
+        - button "Completed 1" [ref=f3e284] [cursor=pointer]:
+          - text: Completed
+          - generic [ref=f3e285]: "1"
+      - button "Reconcile September invoices Nisha Rao · 4h estimated Oct 12" [ref=f3e293] [cursor=pointer]:
+        - generic [ref=f3e295]:
+          - strong [ref=f3e296]: Reconcile September invoices
+          - generic [ref=f3e297]: Nisha Rao · 4h estimated
+        - generic [ref=f3e298]: Oct 12
+      - paragraph [ref=f3e305]:
+        - text: New work starts with a conversation.
+        - button "Talk to Company Brain" [ref=f3e306] [cursor=pointer]

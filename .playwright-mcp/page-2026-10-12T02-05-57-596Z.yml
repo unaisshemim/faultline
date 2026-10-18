@@ -1,0 +1,196 @@
+- generic:
+  - generic [aria-hidden]:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - list:
+                - listitem:
+                  - link:
+                    - /url: "#/"
+                    - generic: Company Brain
+            - generic:
+              - generic:
+                - generic: Workspace
+                - generic:
+                  - list:
+                    - listitem:
+                      - link:
+                        - /url: "#/"
+                        - generic: Dashboard
+                    - listitem:
+                      - link:
+                        - /url: "#/tasks"
+                        - generic: Tasks
+                    - listitem:
+                      - link:
+                        - /url: "#/team"
+                        - generic: Team
+                    - listitem:
+                      - link:
+                        - /url: "#/updates"
+                        - generic: Updates
+              - generic:
+                - generic: Assistant
+                - generic:
+                  - list:
+                    - listitem:
+                      - link:
+                        - /url: "#/"
+                        - generic: Company assistant
+            - generic:
+              - list:
+                - listitem:
+                  - link:
+                    - /url: "#/?settings=1"
+                    - generic: MS
+                    - generic:
+                      - generic: Maya Sharma
+                      - generic: Acme & Co. · Founder
+      - main:
+        - generic:
+          - button:
+            - generic: Toggle Sidebar
+          - generic: Workspace
+          - generic: Dashboard
+          - generic:
+            - generic: Demo workspace
+            - button
+        - generic:
+          - generic:
+            - generic:
+              - textbox:
+                - /placeholder: Search your company
+              - generic: ⌘ K
+            - generic:
+              - button:
+                - generic: "1"
+              - button
+              - button
+          - generic:
+            - generic:
+              - generic:
+                - generic: Monday, October 12
+                - heading [level=1]: Dashboard
+                - paragraph: Welcome back, Maya. Here’s what’s happening with your team.
+                - button: Employee simulator
+              - generic:
+                - button:
+                  - generic: Active tasks
+                  - strong: "1"
+                  - generic: Currently in motion
+                - button:
+                  - generic: Blocked
+                  - strong: "1"
+                  - generic: Needs your attention
+                - button:
+                  - generic: Completed
+                  - strong: "2"
+                  - generic: Work delivered
+                - button:
+                  - generic: Team members
+                  - strong: "3"
+                  - generic: Across your company
+              - region:
+                - generic:
+                  - generic:
+                    - generic: Your company assistant
+                    - generic: People. Priorities. Progress.
+                  - textbox:
+                    - /placeholder: What would you like to get done today?
+                    - text: Prepare the inventory report
+                  - generic:
+                    - generic: A little context. A lot of clarity.
+                    - generic:
+                      - generic: ↵ to send
+                      - button
+                - generic:
+                  - button: Assign a task
+                  - button: What needs my attention?
+                  - button: Who has capacity?
+                - button: Connect OpenAI to start your conversation
+              - generic:
+                - generic:
+                  - heading [level=2]: Active tasks
+                  - button: All tasks
+                - generic:
+                  - button:
+                    - generic:
+                      - strong: Reconcile September invoices
+                      - generic: Nisha Rao · 4h estimated
+                    - generic: Blocked
+                    - generic: Today
+              - generic:
+                - generic:
+                  - heading [level=2]: The latest from your team
+                  - button: All updates
+                - button:
+                  - generic: AM
+                  - generic:
+                    - strong: Arjun Mehta
+                    - text: ·This task is complete.
+                  - generic: 6h ago
+                - button:
+                  - generic: AM
+                  - generic:
+                    - strong: Arjun Mehta
+                    - text: ·hi
+                  - generic: 6h ago
+                - button:
+                  - generic: AM
+                  - generic:
+                    - strong: Arjun Mehta
+                    - text: ·Vendor review is progressing; final terms check tomorrow.
+                  - generic: 7h ago
+              - generic:
+                - generic:
+                  - heading [level=2]: Team capacity
+                  - generic: Simple weekly capacity
+                - button:
+                  - generic: AM
+                  - strong: Arjun Mehta
+                  - generic: Operations lead
+                  - generic: 8h available
+                - button:
+                  - generic: LS
+                  - strong: Leena Shah
+                  - generic: Operations associate
+                  - generic: 16h available
+                - button:
+                  - generic: NR
+                  - strong: Nisha Rao
+                  - generic: Finance lead
+                  - generic: 8h available
+              - generic:
+                - text: Company context is up to date
+                - generic: Built for fewer “any updates?”
+  - dialog [ref=f5e588]:
+    - generic [ref=f5e589]:
+      - generic [ref=f5e590]: YOUR LOCAL WORKSPACE
+      - heading "Make the connection." [level=2] [ref=f5e591]
+      - paragraph [ref=f5e592]: One company graph. One AI connection. That’s all this demo needs.
+    - generic [ref=f5e603]:
+      - strong [ref=f5e604]: FalkorDB
+      - generic [ref=f5e605]: Connected · persistent company data
+    - generic [ref=f5e612]:
+      - strong [ref=f5e613]: OpenAI
+      - generic [ref=f5e614]: API key needed to start founder chat
+    - generic [ref=f5e616]:
+      - heading "Set up once, then just talk." [level=3] [ref=f5e617]
+      - paragraph [ref=f5e618]:
+        - text: Copy
+        - code [ref=f5e619]: .env.example
+        - text: to
+        - code [ref=f5e620]: .env
+        - text: in the project root. Add your OpenAI API key and restart the backend.
+      - generic [ref=f5e621]: OPENAI_API_KEY=your-key OPENAI_MODEL=gpt-4.1-mini
+      - paragraph [ref=f5e622]:
+        - text: Start the local database with
+        - code [ref=f5e623]: npm run db:up
+        - text: ", then the app with"
+        - code [ref=f5e624]: npm run dev
+        - text: . Your key stays on the backend.
+    - paragraph [ref=f5e625]: Teams conversations are simulated. Outlook and live Microsoft integration are deferred.
+    - button "Check connections" [active] [ref=f5e628] [cursor=pointer]
+    - button "Close" [ref=f5e629] [cursor=pointer]

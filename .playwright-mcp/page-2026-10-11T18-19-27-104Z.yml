@@ -1,0 +1,169 @@
+- generic [ref=e4]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - button "Company Brain home" [ref=e10] [cursor=pointer]
+        - generic [ref=e11]: CompanyBrain
+        - button "Close navigation" [ref=e12] [cursor=pointer]
+      - generic [ref=e13]:
+        - text: Acme & Co.
+        - generic [ref=e15]: DEMO
+    - generic [ref=e16]:
+      - list "Main navigation" [ref=e17]:
+        - listitem [ref=e18]:
+          - button "Home" [ref=e19] [cursor=pointer]
+        - listitem [ref=e24]:
+          - button "Tasks 2" [ref=e25] [cursor=pointer]:
+            - generic [ref=e29]: Tasks
+            - generic [ref=e30]: "2"
+        - listitem [ref=e31]:
+          - button "Team" [ref=e32] [cursor=pointer]
+        - listitem [ref=e38]:
+          - button "Updates" [ref=e39] [cursor=pointer]
+        - listitem [ref=e45]:
+          - button "Company Brain" [ref=e46] [cursor=pointer]
+      - generic [ref=e51]:
+        - text: YOUR COMPANY
+        - button "Operations 2" [ref=e52] [cursor=pointer]:
+          - text: Operations
+          - generic [ref=e54]: "2"
+        - button "₹ Finance 1" [ref=e55] [cursor=pointer]:
+          - generic [ref=e56]: ₹
+          - text: Finance
+          - generic [ref=e57]: "1"
+    - generic [ref=e58]:
+      - button "Employee simulator See the other side" [ref=e59] [cursor=pointer]:
+        - generic [ref=e61]:
+          - text: Employee simulator
+          - generic [ref=e62]: See the other side
+      - button "M Maya Sharma Founder" [ref=e63] [cursor=pointer]:
+        - generic [ref=e64]: M
+        - generic [ref=e65]:
+          - text: Maya Sharma
+          - generic [ref=e66]: Founder
+  - generic [ref=e67]:
+    - generic [ref=e68]:
+      - textbox "Search tasks" [ref=e72]:
+        - /placeholder: Search your company
+      - generic [ref=e73]: ⌘ K
+    - generic [ref=e74]:
+      - button "View updates" [ref=e75] [cursor=pointer]:
+        - generic [ref=e76]: "1"
+      - button "Create task through chat" [ref=e77] [cursor=pointer]
+      - button "Company settings" [ref=e78] [cursor=pointer]
+  - main [ref=e79]:
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - text: Sunday, October 11
+        - heading "A little clarity, Maya." [level=1] [ref=e82]
+        - paragraph [ref=e83]: Your company, moving together.
+      - region "Founder AI conversation" [ref=e84]:
+        - generic [ref=e85]:
+          - textbox "Message Company Brain" [ref=e86]:
+            - /placeholder: What would you like to get done today?
+          - generic [ref=e87]:
+            - generic [ref=e88]: A little context. A lot of clarity.
+            - generic [ref=e92]:
+              - generic [ref=e93]: ↵ to send
+              - button "Send message" [disabled]
+        - generic [ref=e94]:
+          - button "Assign a task" [ref=e95] [cursor=pointer]
+          - button "What needs my attention?" [ref=e96] [cursor=pointer]
+          - button "Who has capacity?" [ref=e97] [cursor=pointer]
+        - button "Connect OpenAI to start your conversation" [ref=e98] [cursor=pointer]
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - heading "On your radar" [level=2] [ref=e102]
+          - button "All tasks" [ref=e103] [cursor=pointer]
+        - generic [ref=e104]:
+          - button "Review vendor agreements Arjun Mehta · 6h estimated Oct 13" [ref=e105] [cursor=pointer]:
+            - generic [ref=e107]:
+              - strong [ref=e108]: Review vendor agreements
+              - generic [ref=e109]: Arjun Mehta · 6h estimated
+            - generic [ref=e110]: Oct 13
+          - button "Reconcile September invoices Nisha Rao · 4h estimated Oct 12" [ref=e111] [cursor=pointer]:
+            - generic [ref=e113]:
+              - strong [ref=e114]: Reconcile September invoices
+              - generic [ref=e115]: Nisha Rao · 4h estimated
+            - generic [ref=e116]: Oct 12
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - heading "The latest from your team" [level=2] [ref=e119]
+          - button "All updates" [ref=e120] [cursor=pointer]
+        - button "AM Arjun Mehta·Vendor review is progressing; final terms check tomorrow." [ref=e121] [cursor=pointer]:
+          - generic [ref=e122]: AM
+          - generic [ref=e124]:
+            - strong [ref=e125]: Arjun Mehta
+            - text: ·Vendor review is progressing; final terms check tomorrow.
+        - button "AM Arjun Mehta·Two agreements reviewed. I’m checking the delivery terms on the last one." [ref=e126] [cursor=pointer]:
+          - generic [ref=e127]: AM
+          - generic [ref=e129]:
+            - strong [ref=e130]: Arjun Mehta
+            - text: ·Two agreements reviewed. I’m checking the delivery terms on the last one.
+        - button "NR Nisha Rao·Waiting for two supplier receipts from operations." [ref=e131] [cursor=pointer]:
+          - generic [ref=e132]: NR
+          - generic [ref=e134]:
+            - strong [ref=e135]: Nisha Rao
+            - text: ·Waiting for two supplier receipts from operations.
+      - generic [ref=e136]:
+        - generic [ref=e137]:
+          - heading "A little room to take on more" [level=2] [ref=e138]
+          - generic [ref=e139]: Simple weekly capacity
+        - button "AM Arjun Mehta 2h available" [ref=e140] [cursor=pointer]:
+          - generic [ref=e141]: AM
+          - strong [ref=e143]: Arjun Mehta
+          - generic [ref=e144]: 2h available
+        - button "LS Leena Shah 16h available" [ref=e145] [cursor=pointer]:
+          - generic [ref=e146]: LS
+          - strong [ref=e148]: Leena Shah
+          - generic [ref=e149]: 16h available
+        - button "NR Nisha Rao 8h available" [ref=e150] [cursor=pointer]:
+          - generic [ref=e151]: NR
+          - strong [ref=e153]: Nisha Rao
+          - generic [ref=e154]: 8h available
+      - generic [ref=e155]:
+        - text: Company context is up to date
+        - generic [ref=e157]: Built for fewer “any updates?”
+  - complementary [ref=e158]:
+    - generic [ref=e159]:
+      - text: MAKE YOURSELF AT HOME
+      - heading "A good place to start." [level=2] [ref=e160]
+      - paragraph [ref=e161]: 3 of 5 steps completed. Little steps, big clarity.
+      - progressbar [ref=e162]
+      - generic [ref=e164]:
+        - button "Meet your team Responsibilities, all in one place" [ref=e165] [cursor=pointer]:
+          - generic [ref=e166]:
+            - text: Meet your team
+            - generic [ref=e167]: Responsibilities, all in one place
+        - button "Connect your company brain Your company graph is ready" [ref=e168] [cursor=pointer]:
+          - generic [ref=e169]:
+            - text: Connect your company brain
+            - generic [ref=e170]: Your company graph is ready
+        - button "Connect OpenAI Bring your assistant to life" [ref=e171] [cursor=pointer]:
+          - generic [ref=e172]:
+            - text: Connect OpenAI
+            - generic [ref=e173]: Bring your assistant to life
+        - button "Give your first assignment Just tell Company Brain" [ref=e174] [cursor=pointer]:
+          - generic [ref=e175]:
+            - text: Give your first assignment
+            - generic [ref=e176]: Just tell Company Brain
+        - button "Hear back from your team Try the employee conversation" [ref=e177] [cursor=pointer]:
+          - generic [ref=e178]:
+            - text: Hear back from your team
+            - generic [ref=e179]: Try the employee conversation
+    - generic [ref=e180]:
+      - heading "Company pulse" [level=3] [ref=e182]
+      - generic [ref=e184]:
+        - generic [ref=e185]: Work moving forward
+        - strong [ref=e186]: "2"
+      - button [ref=e187] [cursor=pointer]:
+        - generic [ref=e188]: Needs a little help
+        - strong [ref=e190]: "1"
+      - generic [ref=e191]:
+        - generic [ref=e192]: Done and dusted
+        - strong [ref=e194]: "1"
+    - generic [ref=e195]:
+      - text: ✦
+      - paragraph [ref=e196]: You set the direction.Company Brain keepsthe little things moving.
+      - generic [ref=e197]: ONE CONVERSATION AT A TIME
+    - button "Company graph connected" [ref=e198] [cursor=pointer]

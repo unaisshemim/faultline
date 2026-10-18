@@ -1,0 +1,82 @@
+- generic:
+  - generic [aria-hidden]:
+    - generic:
+      - main:
+        - generic:
+          - button:
+            - generic: Toggle Sidebar
+          - generic: Workspace
+          - generic: Tasks
+          - generic:
+            - button
+        - generic:
+          - generic:
+            - generic:
+              - textbox:
+                - /placeholder: Search your company
+            - generic:
+              - button:
+                - generic: "1"
+              - button
+              - button
+          - generic:
+            - generic:
+              - generic:
+                - generic: A CLEARER PICTURE
+                - generic:
+                  - heading [level=1]: Tasks
+                  - button: Create with AI
+                - paragraph: Every task has a person, a purpose, and a next step.
+              - group:
+                - button:
+                  - text: All tasks
+                  - generic: "3"
+                - button:
+                  - text: Active
+                  - generic: "1"
+                - button:
+                  - text: Blocked
+                  - generic: "1"
+                - button:
+                  - text: Completed
+                  - generic: "2"
+              - generic:
+                - button:
+                  - generic:
+                    - strong: Reconcile September invoices
+                    - generic: Nisha Rao · 4h estimated
+                  - generic: Today
+              - paragraph:
+                - text: New work starts with a conversation.
+                - button: Talk to Company Brain
+  - dialog [ref=f5e379]:
+    - generic [ref=f5e380]:
+      - generic [ref=f5e381]: TASK DETAILS
+      - heading "Reconcile September invoices" [level=2] [ref=f5e382]
+      - paragraph [ref=f5e383]: Match supplier invoices with bank transactions and prepare the final summary.
+    - generic [ref=f5e384]:
+      - generic [ref=f5e385]: Blocked
+      - generic [ref=f5e386]: Oct 12, 11:27 PM
+      - generic [ref=f5e389]: 4h estimated
+    - generic [ref=f5e393]:
+      - generic [ref=f5e394]:
+        - generic [ref=f5e395]: NR
+        - generic [ref=f5e397]:
+          - strong [ref=f5e398]: Nisha Rao
+          - generic [ref=f5e399]: Finance lead
+      - paragraph [ref=f5e400]: Nisha is responsible for finance and has capacity for this work.
+    - generic [ref=f5e404]:
+      - strong [ref=f5e405]: Waiting on something
+      - paragraph [ref=f5e406]: Waiting for two supplier receipts from operations.
+    - generic [ref=f5e407]:
+      - heading "Updates" [level=3] [ref=f5e408]
+      - generic [ref=f5e411]:
+        - generic [ref=f5e412]:
+          - text: Nisha Rao
+          - generic [ref=f5e413]: · Employee confirmed · 8h ago
+        - paragraph [ref=f5e414]: Waiting for two supplier receipts from operations.
+    - generic [ref=f5e415]:
+      - generic [ref=f5e416]: Check-ins start after the next employee reply
+      - button "Employee simulator" [active] [ref=f5e417] [cursor=pointer]
+    - button "Cancel task" [ref=f5e418] [cursor=pointer]
+    - button "Close" [ref=f5e419] [cursor=pointer]

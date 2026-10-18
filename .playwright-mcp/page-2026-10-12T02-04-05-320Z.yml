@@ -1,0 +1,13 @@
+- generic [ref=f1e3]:
+  - generic [ref=f1e4]: "[plugin:vite:import-analysis] Failed to resolve import \"@tanstack/react-query\" from \"node_modules/.vite/deps/ra-core.js?v=832508fa\". Does the file exist?"
+  - generic [ref=f1e5]: /Users/unaisshemim/Desktop/project/company-brain/apps/web/node_modules/.vite/deps/ra-core.js:3:170
+  - generic [ref=f1e6]: "1 | import { n as __exportAll, r as __toESM, t as __commonJSMin } from \"./rolldown-runtime-DC62tzP2.js\"; 2 | import { t as require_react } from \"./react.js\"; 3 | ...nfiniteQuery, useMutation, useQuery, useQueryClient } from \"@tanstack/react-query\"; | ^ 4 | import { Link, Navigate as Navigate$1, Outlet as Outlet$1, Route, RouterProvider, Routes, UNSAFE_DataRouterContext, U... 5 | import { FormProvider, useController, useFieldArray, useForm, useFormContext, useFormState, useWatch } from \"react-ho..."
+  - generic [ref=f1e7]: at TransformPluginContext._formatLog (file:///Users/unaisshemim/Desktop/project/company-brain/node_modules/vite/dist/node/chunks/node.js:8766:39) at TransformPluginContext.error (file:///Users/unaisshemim/Desktop/project/company-brain/node_modules/vite/dist/node/chunks/node.js:8763:14) at normalizeUrl (file:///Users/unaisshemim/Desktop/project/company-brain/node_modules/vite/dist/node/chunks/node.js:26632:18) at async file:///Users/unaisshemim/Desktop/project/company-brain/node_modules/vite/dist/node/chunks/node.js:26702:30 at async Promise.all (index 2) at async TransformPluginContext.transform (file:///Users/unaisshemim/Desktop/project/company-brain/node_modules/vite/dist/node/chunks/node.js:26668:4) at async EnvironmentPluginContainer.transform (file:///Users/unaisshemim/Desktop/project/company-brain/node_modules/vite/dist/node/chunks/node.js:8545:14) at async loadAndTransform (file:///Users/unaisshemim/Desktop/project/company-brain/node_modules/vite/dist/node/chunks/node.js:20184:26) at async viteTransformMiddleware (file:///Users/unaisshemim/Desktop/project/company-brain/node_modules/vite/dist/node/chunks/node.js:20404:20)
+  - generic [ref=f1e8]:
+    - text: Click outside, press Esc key, or fix the code to dismiss.You can also disable this overlay by setting
+    - code [ref=f1e9]: server.hmr.overlay
+    - text: to
+    - code [ref=f1e10]: "false"
+    - text: in
+    - code [ref=f1e11]: vite.config.ts
+    - text: .

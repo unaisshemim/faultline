@@ -1,0 +1,420 @@
+- generic:
+  - generic [aria-hidden]:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - list:
+                - listitem:
+                  - link:
+                    - /url: "#/"
+                    - generic: Company Brain
+            - generic:
+              - generic:
+                - generic: Workspace
+                - generic:
+                  - list:
+                    - listitem:
+                      - link:
+                        - /url: "#/"
+                        - generic: Dashboard
+                    - listitem:
+                      - link:
+                        - /url: "#/tasks"
+                        - generic: Tasks
+                    - listitem:
+                      - link:
+                        - /url: "#/team"
+                        - generic: Team
+                    - listitem:
+                      - link:
+                        - /url: "#/updates"
+                        - generic: Updates
+              - generic:
+                - generic: Assistant
+                - generic:
+                  - list:
+                    - listitem:
+                      - link:
+                        - /url: "#/"
+                        - generic: Company assistant
+            - generic:
+              - list:
+                - listitem:
+                  - link:
+                    - /url: "#/?settings=1"
+                    - generic: MS
+                    - generic:
+                      - generic: Maya Sharma
+                      - generic: Acme & Co. · Founder
+      - main:
+        - generic:
+          - button:
+            - generic: Toggle Sidebar
+          - generic: Workspace
+          - generic: Dashboard
+          - generic:
+            - generic: Demo workspace
+            - button
+        - generic:
+          - generic:
+            - generic:
+              - textbox:
+                - /placeholder: Search your company
+              - generic: ⌘ K
+            - generic:
+              - button:
+                - generic: "1"
+              - button
+              - button
+          - generic:
+            - generic:
+              - generic:
+                - generic: Monday, October 12
+                - heading [level=1]: Dashboard
+                - paragraph: Welcome back, Maya. Here’s what’s happening with your team.
+                - button: Employee simulator
+              - generic:
+                - button:
+                  - generic: Active tasks
+                  - strong: "1"
+                  - generic: Currently in motion
+                - button:
+                  - generic: Blocked
+                  - strong: "1"
+                  - generic: Needs your attention
+                - button:
+                  - generic: Completed
+                  - strong: "2"
+                  - generic: Work delivered
+                - button:
+                  - generic: Team members
+                  - strong: "3"
+                  - generic: Across your company
+              - region:
+                - generic:
+                  - generic:
+                    - generic: Your company assistant
+                    - generic: People. Priorities. Progress.
+                  - textbox:
+                    - /placeholder: What would you like to get done today?
+                    - text: Prepare the inventory report
+                  - generic:
+                    - generic: A little context. A lot of clarity.
+                    - generic:
+                      - generic: ↵ to send
+                      - button
+                - generic:
+                  - button: Assign a task
+                  - button: What needs my attention?
+                  - button: Who has capacity?
+                - button: Connect OpenAI to start your conversation
+              - generic:
+                - generic:
+                  - heading [level=2]: Active tasks
+                  - button: All tasks
+                - generic:
+                  - button:
+                    - generic:
+                      - strong: Reconcile September invoices
+                      - generic: Nisha Rao · 4h estimated
+                    - generic: Blocked
+                    - generic: Today
+              - generic:
+                - generic:
+                  - heading [level=2]: The latest from your team
+                  - button: All updates
+                - button:
+                  - generic: AM
+                  - generic:
+                    - strong: Arjun Mehta
+                    - text: ·This task is complete.
+                  - generic: 6h ago
+                - button:
+                  - generic: AM
+                  - generic:
+                    - strong: Arjun Mehta
+                    - text: ·hi
+                  - generic: 6h ago
+                - button:
+                  - generic: AM
+                  - generic:
+                    - strong: Arjun Mehta
+                    - text: ·Vendor review is progressing; final terms check tomorrow.
+                  - generic: 7h ago
+              - generic:
+                - generic:
+                  - heading [level=2]: Team capacity
+                  - generic: Simple weekly capacity
+                - button:
+                  - generic: AM
+                  - strong: Arjun Mehta
+                  - generic: Operations lead
+                  - generic: 8h available
+                - button:
+                  - generic: LS
+                  - strong: Leena Shah
+                  - generic: Operations associate
+                  - generic: 16h available
+                - button:
+                  - generic: NR
+                  - strong: Nisha Rao
+                  - generic: Finance lead
+                  - generic: 8h available
+              - generic:
+                - text: Company context is up to date
+                - generic: Built for fewer “any updates?”
+  - dialog [ref=f5e632]:
+    - generic [ref=f5e638]:
+      - heading "Employee conversation" [level=2] [ref=f5e639]
+      - paragraph [ref=f5e640]: Teams simulator · no real messages sent
+    - generic [ref=f5e641]:
+      - generic [ref=f5e642]:
+        - generic [ref=f5e643]: Respond as
+        - combobox [active] [ref=f5e644] [cursor=pointer]:
+          - generic: Arjun Mehta
+      - generic [ref=f5e645]:
+        - generic [ref=f5e646]: Task
+        - combobox [ref=f5e647] [cursor=pointer]:
+          - generic: Review vendor agreements
+    - generic [ref=f5e648]:
+      - strong [ref=f5e649]: Review vendor agreements
+      - generic [ref=f5e650]: Completed
+    - generic [ref=f5e651]:
+      - generic [ref=f5e652]:
+        - generic [ref=f5e653]:
+          - generic [ref=f5e654]: ✦
+          - text: Company Brain
+          - generic [ref=f5e655]: 1d ago
+        - paragraph [ref=f5e656]: Please review the vendor agreements and flag any changes in terms. Can you take this on?
+      - generic [ref=f5e657]:
+        - generic [ref=f5e658]:
+          - generic [ref=f5e659]: AM
+          - text: Arjun
+          - generic [ref=f5e661]: 8h ago
+        - paragraph [ref=f5e662]: Two agreements reviewed. I’m checking the delivery terms on the last one.
+      - generic [ref=f5e663]:
+        - generic [ref=f5e664]:
+          - generic [ref=f5e665]: AM
+          - text: Arjun
+          - generic [ref=f5e667]: 7h ago
+        - paragraph [ref=f5e668]: Vendor review is progressing; final terms check tomorrow.
+      - generic [ref=f5e669]:
+        - generic [ref=f5e670]:
+          - generic [ref=f5e671]: ✦
+          - text: Company Brain
+          - generic [ref=f5e672]: 7h ago
+        - paragraph [ref=f5e673]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e674]: Automatic follow-up
+      - generic [ref=f5e675]:
+        - generic [ref=f5e676]:
+          - generic [ref=f5e677]: ✦
+          - text: Company Brain
+          - generic [ref=f5e678]: 7h ago
+        - paragraph [ref=f5e679]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e680]: Automatic follow-up
+      - generic [ref=f5e681]:
+        - generic [ref=f5e682]:
+          - generic [ref=f5e683]: ✦
+          - text: Company Brain
+          - generic [ref=f5e684]: 7h ago
+        - paragraph [ref=f5e685]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e686]: Automatic follow-up
+      - generic [ref=f5e687]:
+        - generic [ref=f5e688]:
+          - generic [ref=f5e689]: ✦
+          - text: Company Brain
+          - generic [ref=f5e690]: 7h ago
+        - paragraph [ref=f5e691]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e692]: Automatic follow-up
+      - generic [ref=f5e693]:
+        - generic [ref=f5e694]:
+          - generic [ref=f5e695]: ✦
+          - text: Company Brain
+          - generic [ref=f5e696]: 7h ago
+        - paragraph [ref=f5e697]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e698]: Automatic follow-up
+      - generic [ref=f5e699]:
+        - generic [ref=f5e700]:
+          - generic [ref=f5e701]: ✦
+          - text: Company Brain
+          - generic [ref=f5e702]: 7h ago
+        - paragraph [ref=f5e703]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e704]: Automatic follow-up
+      - generic [ref=f5e705]:
+        - generic [ref=f5e706]:
+          - generic [ref=f5e707]: ✦
+          - text: Company Brain
+          - generic [ref=f5e708]: 7h ago
+        - paragraph [ref=f5e709]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e710]: Automatic follow-up
+      - generic [ref=f5e711]:
+        - generic [ref=f5e712]:
+          - generic [ref=f5e713]: ✦
+          - text: Company Brain
+          - generic [ref=f5e714]: 7h ago
+        - paragraph [ref=f5e715]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e716]: Automatic follow-up
+      - generic [ref=f5e717]:
+        - generic [ref=f5e718]:
+          - generic [ref=f5e719]: ✦
+          - text: Company Brain
+          - generic [ref=f5e720]: 7h ago
+        - paragraph [ref=f5e721]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e722]: Automatic follow-up
+      - generic [ref=f5e723]:
+        - generic [ref=f5e724]:
+          - generic [ref=f5e725]: ✦
+          - text: Company Brain
+          - generic [ref=f5e726]: 7h ago
+        - paragraph [ref=f5e727]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e728]: Automatic follow-up
+      - generic [ref=f5e729]:
+        - generic [ref=f5e730]:
+          - generic [ref=f5e731]: ✦
+          - text: Company Brain
+          - generic [ref=f5e732]: 7h ago
+        - paragraph [ref=f5e733]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e734]: Automatic follow-up
+      - generic [ref=f5e735]:
+        - generic [ref=f5e736]:
+          - generic [ref=f5e737]: ✦
+          - text: Company Brain
+          - generic [ref=f5e738]: 7h ago
+        - paragraph [ref=f5e739]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e740]: Automatic follow-up
+      - generic [ref=f5e741]:
+        - generic [ref=f5e742]:
+          - generic [ref=f5e743]: ✦
+          - text: Company Brain
+          - generic [ref=f5e744]: 7h ago
+        - paragraph [ref=f5e745]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e746]: Automatic follow-up
+      - generic [ref=f5e747]:
+        - generic [ref=f5e748]:
+          - generic [ref=f5e749]: ✦
+          - text: Company Brain
+          - generic [ref=f5e750]: 7h ago
+        - paragraph [ref=f5e751]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e752]: Automatic follow-up
+      - generic [ref=f5e753]:
+        - generic [ref=f5e754]:
+          - generic [ref=f5e755]: ✦
+          - text: Company Brain
+          - generic [ref=f5e756]: 7h ago
+        - paragraph [ref=f5e757]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e758]: Automatic follow-up
+      - generic [ref=f5e759]:
+        - generic [ref=f5e760]:
+          - generic [ref=f5e761]: ✦
+          - text: Company Brain
+          - generic [ref=f5e762]: 7h ago
+        - paragraph [ref=f5e763]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e764]: Automatic follow-up
+      - generic [ref=f5e765]:
+        - generic [ref=f5e766]:
+          - generic [ref=f5e767]: ✦
+          - text: Company Brain
+          - generic [ref=f5e768]: 7h ago
+        - paragraph [ref=f5e769]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e770]: Automatic follow-up
+      - generic [ref=f5e771]:
+        - generic [ref=f5e772]:
+          - generic [ref=f5e773]: ✦
+          - text: Company Brain
+          - generic [ref=f5e774]: 7h ago
+        - paragraph [ref=f5e775]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e776]: Automatic follow-up
+      - generic [ref=f5e777]:
+        - generic [ref=f5e778]:
+          - generic [ref=f5e779]: ✦
+          - text: Company Brain
+          - generic [ref=f5e780]: 7h ago
+        - paragraph [ref=f5e781]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e782]: Automatic follow-up
+      - generic [ref=f5e783]:
+        - generic [ref=f5e784]:
+          - generic [ref=f5e785]: ✦
+          - text: Company Brain
+          - generic [ref=f5e786]: 7h ago
+        - paragraph [ref=f5e787]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e788]: Automatic follow-up
+      - generic [ref=f5e789]:
+        - generic [ref=f5e790]:
+          - generic [ref=f5e791]: ✦
+          - text: Company Brain
+          - generic [ref=f5e792]: 7h ago
+        - paragraph [ref=f5e793]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e794]: Automatic follow-up
+      - generic [ref=f5e795]:
+        - generic [ref=f5e796]:
+          - generic [ref=f5e797]: ✦
+          - text: Company Brain
+          - generic [ref=f5e798]: 7h ago
+        - paragraph [ref=f5e799]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e800]: Automatic follow-up
+      - generic [ref=f5e801]:
+        - generic [ref=f5e802]:
+          - generic [ref=f5e803]: ✦
+          - text: Company Brain
+          - generic [ref=f5e804]: 7h ago
+        - paragraph [ref=f5e805]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e806]: Automatic follow-up
+      - generic [ref=f5e807]:
+        - generic [ref=f5e808]:
+          - generic [ref=f5e809]: ✦
+          - text: Company Brain
+          - generic [ref=f5e810]: 7h ago
+        - paragraph [ref=f5e811]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e812]: Automatic follow-up
+      - generic [ref=f5e813]:
+        - generic [ref=f5e814]:
+          - generic [ref=f5e815]: ✦
+          - text: Company Brain
+          - generic [ref=f5e816]: 7h ago
+        - paragraph [ref=f5e817]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e818]: Automatic follow-up
+      - generic [ref=f5e819]:
+        - generic [ref=f5e820]:
+          - generic [ref=f5e821]: ✦
+          - text: Company Brain
+          - generic [ref=f5e822]: 7h ago
+        - paragraph [ref=f5e823]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e824]: Automatic follow-up
+      - generic [ref=f5e825]:
+        - generic [ref=f5e826]:
+          - generic [ref=f5e827]: ✦
+          - text: Company Brain
+          - generic [ref=f5e828]: 6h ago
+        - paragraph [ref=f5e829]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e830]: Automatic follow-up
+      - generic [ref=f5e831]:
+        - generic [ref=f5e832]:
+          - generic [ref=f5e833]: ✦
+          - text: Company Brain
+          - generic [ref=f5e834]: 6h ago
+        - paragraph [ref=f5e835]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e836]: Automatic follow-up
+      - generic [ref=f5e837]:
+        - generic [ref=f5e838]:
+          - generic [ref=f5e839]: ✦
+          - text: Company Brain
+          - generic [ref=f5e840]: 6h ago
+        - paragraph [ref=f5e841]: Any update on “Review vendor agreements”?
+        - generic [ref=f5e842]: Automatic follow-up
+      - generic [ref=f5e843]:
+        - generic [ref=f5e844]:
+          - generic [ref=f5e845]: AM
+          - text: Arjun
+          - generic [ref=f5e847]: 6h ago
+        - paragraph [ref=f5e848]: hi
+      - generic [ref=f5e849]:
+        - generic [ref=f5e850]:
+          - generic [ref=f5e851]: AM
+          - text: Arjun
+          - generic [ref=f5e853]: 6h ago
+        - paragraph [ref=f5e854]: This task is complete.
+    - paragraph [ref=f5e856]: This task is closed. Follow-ups have stopped.
+    - paragraph [ref=f5e859]: Demo check-ins run every 2 minutes. Seeded tasks begin check-ins after their first new reply.
+    - button "Close" [ref=f5e860] [cursor=pointer]

@@ -1,18 +1,101 @@
-# Faultline — five alerts, one underlying failure
+# Faultline
 
-Track 01 sandbox feature on `feature/incident-investigator`.
+**Trace the failure. Prove the fix.**
 
-Open **http://localhost:5173/#/incident**. The page contains the dependency graph, investigation/evidence panel, one approved action, and the before/after checkout check.
+Faultline is a graph-powered incident investigator. It connects service dependencies, request traces, and recent changes to explain an underlying failure, propose a targeted sandbox fix, and verify recovery after you approve it.
+
+![Faultline home page introducing graph-powered incident investigation](docs/media/faultline-overview.png)
+
+[Animated walkthrough](#watch-the-workflow) · [The problem](#the-problem) · [How it works](#how-it-works) · [Run locally](#run-the-incident-demo) · [Architecture](#architecture) · [Company Brain workspace](#company-brain-for-itron)
+
+## The problem
+
+When checkout fails, several dependent services can raise alerts at once. Engineers have to connect the dependency map, logs, and change history before deciding what to fix. A recent deployment can look guilty simply because it happened around the same time.
+
+Faultline demonstrates that problem with five generated alerts and a misleading payments release. The investigation follows the failing request paths to their shared dependency, checks actual timeout records and the preceding configuration change, and explains why healthy payments should be ruled out. It then asks for approval before changing the sandbox and reruns the same checkout request to test the result.
+
+The intended user is an engineer investigating a service incident. This repository is an executable local demonstration with simulated services, generated events, and a real FalkorDB graph; it is not connected to production infrastructure.
+
+## Watch the workflow
+
+![Animated screenshot walkthrough: generated incident, evidence-supported diagnosis, Cypher queries, and verified recovery](docs/media/faultline-walkthrough.gif)
+
+**20-second screenshot walkthrough:** trigger → investigate → inspect graph queries → approve and verify. [Open or download the MP4](docs/media/faultline-walkthrough.mp4) for a larger view.
+
+These captures come from the running local app using **RULES + MCP**, the deterministic investigator, with real FalkorDB queries. The GIF and silent MP4 sequence four captured states; they are not a continuous screen recording or proof of a live OpenAI run.
+
+## How it works
+
+1. **Reproduce the failure.** Trigger a configuration fault. Checkout executes the local dependency handlers, producing request failures, trace spans, and five alerts.
+2. **Connect the evidence.** The investigator uses read-only MCP tools to traverse FalkorDB dependencies, find where failing branches converge, and compare trace evidence with recent changes.
+3. **Explain the cause.** Inspect the proposed cause, supporting records, eliminated suspects, and the exact Cypher queries behind the conclusion.
+4. **Approve one scoped action.** Review the configuration rollback for the implicated service. The server checks that the approval belongs to the current incident and configuration revision.
+5. **Verify recovery.** The server restores the previous configuration and immediately repeats the identical checkout request. A successful response produces the recovered state.
+
+### 1. Several alerts, one investigation
+
+![Active incident with failing checkout, pricing, inventory, and product-data; payments remains healthy](docs/media/incident-triggered.png)
+
+The alerts come from executed sandbox requests. The payments release is a generated decoy; its timing alone does not establish a cause.
+
+### 2. A diagnosis you can inspect
+
+![Investigation identifies product-data as the underlying failure and rules out healthy payments](docs/media/incident-diagnosed.png)
+
+The two failing branches converge on `product-data`. Timeout spans and a preceding configuration change support the diagnosis; successful payment spans rule out the apparent deployment suspect.
+
+### 3. The graph queries behind the answer
+
+![Graph queries panel displaying executed Cypher, parameters, row counts, and durations](docs/media/graph-queries.png)
+
+The queries are visible alongside their parameters, actual result counts, and execution times. Supporting records also expose raw span and change-event data.
+
+### 4. An approved fix with a measured result
+
+![Recovered service topology after approved product-data rollback, with checkout changing from HTTP 503 to HTTP 200](docs/media/incident-recovered.png)
+
+The recovery screen follows a real sandbox rollback and a successful repeat request. Switch the injected fault to payments to demonstrate that the same dependency topology can produce a different diagnosis and rollback target.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    UI[React incident lab] --> API[Hono sandbox API]
+    API --> Services[Five in-process service handlers]
+    Services --> Traces[Executed request spans and generated changes]
+    Traces --> DB[(FalkorDB)]
+    API --> Investigator[OpenAI or deterministic investigator]
+    Investigator --> MCP[Read-only MCP tools]
+    MCP --> DB
+    UI --> Approval[Explicit rollback approval]
+    Approval --> Guard[Incident and revision checks]
+    Guard --> Revert[Restore previous configuration]
+    Revert --> Verify[Repeat the same checkout request]
+    Verify --> UI
+```
+
+| Layer | Implementation | Purpose |
+| --- | --- | --- |
+| Interface | React, TypeScript, Vite | Dependency graph, evidence browser, query inspection, approval, and verification |
+| API and sandbox | Hono on Node.js | Execute simulated services, enforce action boundaries, and rerun checkout |
+| Connected evidence | FalkorDB | Store dependencies, incident spans, and change events; traverse and aggregate paths with Cypher |
+| Investigation | OpenAI when configured, or deterministic rules | Discover and call the read-only MCP tools; propose an evidence-checked cause |
+| Workspace tooling | npm workspaces and moon | Run, build, and check the web and API apps |
+
+The repository also retains the [Company Brain workspace](#company-brain-for-itron), a separate conversational task-coordination demo. Faultline opens at `/#/`; Company Brain opens at `/#/workspace`.
 
 ## Run the incident demo
 
 ```sh
 npm ci
+cp .env.example .env
 npm run db:up
 npm run dev
 ```
 
-FalkorDB runs at `127.0.0.1:16379`. Optional OpenAI settings are documented in `.env.example`; without a key, the deterministic investigator uses the same MCP graph tools. The UI identifies which engine actually completed the investigation, including provider fallbacks.
+Requires **Node.js 22.12+** and **Docker Desktop running**. If `.env` already exists, keep it and review `.env.example` instead of overwriting your settings.
+
+Open **http://localhost:5173/#/incident** for the sandbox or **http://localhost:5173/** for the landing page. The API listens on `127.0.0.1:3101`; FalkorDB runs at `127.0.0.1:16379`. Optional OpenAI settings are documented in `.env.example`; without a key, the deterministic investigator uses the same MCP graph tools. With a key configured, use the investigation engine toggle to select **RULES + MCP** for the captured walkthrough. The UI identifies which engine actually completed the investigation, including provider fallbacks. Stop the development servers with Ctrl+C; `npm run db:down` stops the database while retaining its volume.
 
 1. Keep **Product-data configuration** selected and click **Trigger incident**. Checkout executes real local endpoint handlers; aborted requests produce five generated alerts and persisted trace spans. The recent payments release is a generated decoy event.
 2. Click **Investigate incident**. With an OpenAI key, the model discovers the MCP tools and selects reads. The evidence check requires a failing leaf dependency, direct timeout spans, and a preceding configuration change. Native FalkorDB path traversal and branch aggregation reveal checkout → pricing → product-data and checkout → inventory → product-data. Successful payments spans rule out the deployment as the cause.
@@ -57,7 +140,7 @@ npm run test:incident
 
 The normal suite tests real endpoint failure/recovery, both fault locations on the same topology, stale approvals, duplicate actions, concurrent operation guards, MCP argument validation, and refusal to act on a deployment correlation alone. `test:incident` repeats both scenarios against real FalkorDB, asserts the native graph query results, checks HTTP 503 → 200 using the same request, and removes only its own temporary graph. It requires the local database.
 
-The previous Company Brain app remains available at `/#/`; its existing workspace documentation follows. The incident feature does not require Teams, Outlook, cloud deployment, or elaborate memory.
+The Company Brain app remains available at `/#/workspace`; its existing workspace documentation follows. The incident feature does not require Teams, Outlook, cloud deployment, or elaborate memory.
 
 ---
 
@@ -85,7 +168,7 @@ npm run db:up
 npm run dev
 ```
 
-Open http://localhost:5173. The API listens on 127.0.0.1:3101; FalkorDB on 127.0.0.1:16379. These ports avoid existing local services. `npm run db:down` stops the database without deleting the persistent volume.
+Open http://localhost:5173/#/workspace. The API listens on 127.0.0.1:3101; FalkorDB on 127.0.0.1:16379. These ports avoid existing local services. `npm run db:down` stops the database without deleting the persistent volume.
 
 For direct moon commands, use the local CLI:
 

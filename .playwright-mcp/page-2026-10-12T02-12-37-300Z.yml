@@ -1,0 +1,106 @@
+- generic:
+  - generic [aria-hidden]:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - list:
+                - listitem:
+                  - link:
+                    - /url: "#/"
+                    - generic: Company Brain
+            - generic:
+              - generic:
+                - generic: Workspace
+                - generic:
+                  - list:
+                    - listitem:
+                      - link:
+                        - /url: "#/"
+                        - generic: Dashboard
+                    - listitem:
+                      - link:
+                        - /url: "#/tasks"
+                        - generic: Tasks
+                    - listitem:
+                      - link:
+                        - /url: "#/team"
+                        - generic: Team
+                    - listitem:
+                      - link:
+                        - /url: "#/updates"
+                        - generic: Updates
+                    - listitem:
+                      - link:
+                        - /url: "#/integrations"
+                        - generic: Integrations
+              - generic:
+                - generic: Assistant
+                - generic:
+                  - list:
+                    - listitem:
+                      - link:
+                        - /url: "#/"
+                        - generic: Company assistant
+            - generic:
+              - list:
+                - listitem:
+                  - link:
+                    - /url: "#/?settings=1"
+                    - generic: MS
+                    - generic:
+                      - generic: Maya Sharma
+                      - generic: Acme & Co. · Founder
+      - main:
+        - generic:
+          - button:
+            - generic: Toggle Sidebar
+          - generic: Workspace
+          - generic: Integrations
+          - generic:
+            - generic: Demo workspace
+            - button
+        - generic:
+          - generic:
+            - generic: YOUR CONNECTED WORKSPACE
+            - generic:
+              - heading [level=1]: Integrations
+              - button: Refresh
+            - paragraph: Bring your everyday tools into Company Brain. Connect each account on your terms.
+          - generic:
+            - generic:
+              - generic: Setup required
+              - generic:
+                - heading [level=2]: Microsoft Outlook
+                - paragraph: Connect your Microsoft mailbox and calendar to Company Brain.
+              - generic:
+                - generic: Email access
+                - generic: Calendar access
+              - paragraph: Read your email and calendar. Company Brain cannot send email or change events.
+              - generic:
+                - button: Connect Outlook
+            - generic:
+              - generic: Setup required
+              - generic:
+                - heading [level=2]: Microsoft Teams
+                - paragraph: Connect your work account and make your teams and channels available.
+              - generic:
+                - generic: Teams access
+                - generic: Channel discovery
+              - paragraph: Read basic team and channel details. Company Brain cannot send messages or read conversations.
+              - generic:
+                - button: Connect Teams
+          - generic:
+            - generic:
+              - strong: You control your connections
+              - paragraph: Microsoft asks you to approve access before connecting. Disconnecting removes the saved credentials from this workspace. Automatic sync and live Teams messaging are not enabled yet.
+  - dialog [ref=f5e1106]:
+    - generic [ref=f5e1107]:
+      - heading "Enable Microsoft connections" [level=2] [ref=f5e1108]
+      - paragraph [ref=f5e1109]: Microsoft sign-in needs to be configured by the workspace owner before you can connect an account.
+    - paragraph [ref=f5e1110]: Register Company Brain in Microsoft Entra, add the app credentials to the backend, and restart it. Then return here to connect Outlook or Teams.
+    - link "Open Microsoft Entra" [ref=f5e1111] [cursor=pointer]:
+      - /url: https://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade
+    - button "Got it" [active] [ref=f5e1112] [cursor=pointer]
+    - button "Close" [ref=f5e1113] [cursor=pointer]
